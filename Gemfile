@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
@@ -21,6 +22,27 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+#Sections copied from HW gemfile by Michael:
+group :development,:test do  
+  # ... other gems
+  gem 'database_cleaner'
+  gem 'cucumber-rails', :require => false
+end
+
+gem 'haml'
+
+
+
+
+
+
+
+
+
+
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
