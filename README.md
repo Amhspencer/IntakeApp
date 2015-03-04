@@ -19,3 +19,6 @@ https://codeclimate.com/github/Berkeley-BCEF/IntakeApp
 
 Heroku: 
 http://bcef.herokuapp.com/
+
+Collaboration Folder:
+https://drive.google.com/a/berkeley.edu/folderview?id=0B8Lf25J0nO4ib0FkSHFkYkFxYXM&usp=sharing_eid
