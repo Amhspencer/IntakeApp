@@ -13,3 +13,6 @@ http://youtu.be/C0hG3FG5_zg
 
 Pivotal Link:
 https://www.pivotaltracker.com/n/projects/1282432
+
+Code Climate:
+https://codeclimate.com/github/Berkeley-BCEF/IntakeApp
