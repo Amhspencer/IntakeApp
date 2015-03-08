@@ -29,8 +29,18 @@
   = label :form, :cancer_care_provider, "Cancer_Care_Provider"
   = text_field :form, :cancer_care_provider
 
-  = label :form, :bcef_service_area, "BCEF Service Area"
-  = radio_button :form, :bcef_service_area, ["San Fransico County", "San Mateo County", "Santa Clara County"]
+  = label_tag "BCEF Service Area"
+  = label :form, :bcef_service_area, "San Fransico County"
+  = radio_button :form, :bcef_service_area, "San Fransico County" 
+  = label :form, :bcef_service_area, "San Mateo County"
+  = radio_button :form, :bcef_service_area, "San Mateo County"
+  = label :form, :bcef_service_area, "Santa Clara County"
+  = radio_button :form, :bcef_service_area, "Santa Clara County"
+
+
+
+
+
 
   = label_tag "Active Breast Cancer Treatment"
   = label :form, :surgery, "Chemo current/pending/within six months"
@@ -42,8 +52,14 @@
   = label :form, :metastic, "Metastic Breast Cancer/Stage IV"
   = check_box :form, :metastic
 
-  = label :form, :income, "BCEF Individual Income Requirement of $2,000 or less per month"
-  = radio_button :form, :income, ["Yes", "No", "Unsure"]
+  = label_tag "BCEF Individual Income Requirement of $2,000 or less per month"
+  = label :form, :income, "Yes"
+  = radio_button :form, :income, "Yes"
+  = label :form, :income, "No"
+  = radio_button :form, :income,  "No"
+  = label :form, :income, "Unsure"
+  = radio_button :form, :income,  "No"
+
 
   = label :form, :additional_info, "Important Additional infomation. Please contact me before contacting this client."
   = check_box :form, :additional_info
