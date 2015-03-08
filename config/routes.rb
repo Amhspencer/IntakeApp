@@ -1,6 +1,6 @@
 IntakeApp::Application.routes.draw do
 
-  get "form/show"
+  resources :form
 
 
   # The priority is based upon order of creation:
