@@ -1,0 +1,50 @@
+%h1 BCEF Intake Form
+
+
+=form_tag __PATH__
+
+  = label :form, :first_name, "First Name"
+  = text_field :form, :first_name
+
+  = label :form, :middle_initial, "Middle Initial"
+  = text_field :form, :middle_initial
+
+
+  = label :form, :last_name, "Last Name"
+  = text_field :form, :last_name
+
+
+  = label :form, :dob, "Date of Birth"
+  = text_field :form, :dob
+
+  = label :form, :phone_number, "Phone Number"
+  = number_to_phone :form, :phone_number
+
+  = label :form, :preferred_language, "Preferred Language"
+  = select :form, :preffered_language ["English"]
+
+  = label :form, :medical_facility, "Medical Facility"
+  = text_field :form, :medical_facilty
+
+  = label :form, :cancer_care_provider, "Cancer_Care_Provider"
+  = text_fiel :form, :cancer_care_provider
+
+  = label :form, :bcef_service_area, "BCEF Service Area"
+  = radio_button :form, :bcef_service_area ["San Fransico County", "San Mateo County", "Santa Clara County"]
+
+  = label_tag "Active Breast Cancer Treatment"
+  = check_box :form, :surgery, ["Surgery current/pending/within six months"]
+  = check_box :form, :chemo, ["Chemo current/pending/within six months"]
+  = check_box :form, :radiation, ["Radiation current/pending/within six months"]
+  = check_box :form, :metastic, ["Metastic Breast Cancer/Stage IV"]
+
+  = label :form, :income_requirement, "BCEF Individual Income Requirement of $2,000 or less per month"
+  = radio_button :form, :income_requirement ["Yes", "No", "Unsure"]
+
+  = label :form, :contact_partner_requested "Important Additional infomation. Please contact me before contacting this client."
+  = check_box :form, :contact_partner_requested
+
+  = label :form, :contact_permission, "My signature indicates that above cliet has given verbal or written consent for BCEF to contact her/him directly to complete BCEF's application for emergency financial assistance'."
+  = check_box :form, :contact_permission
+
+  = Electronic Signature GOES HERE
