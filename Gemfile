@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.16'
+gem 'bcrypt-ruby', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,6 +29,7 @@ group :development,:test do
   # ... other gems
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
+  gem 'bcrypt', '3.1.7'
 end
 
 gem 'haml'
