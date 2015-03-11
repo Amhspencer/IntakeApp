@@ -1,4 +1,4 @@
-class FormController < ApplicationController
+class FormsController < ApplicationController
 
   def show
     id = params[:id]
