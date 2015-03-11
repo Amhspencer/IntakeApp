@@ -1,7 +1,7 @@
 IntakeApp::Application.routes.draw do
 
 
-  resources :form
+  resources :forms
   get "users/new"
 
   get "sessions/new"

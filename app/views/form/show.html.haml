@@ -18,8 +18,8 @@
           = text_field :form, :last_name, :class => 'form-control'
 
         %div{:class => 'form_group'}
-          = label :form, :dob, "Date of Birth", :class => 'control-label'
-          = text_field :form, :dob, :class => 'form-control'
+          = label :form, :date_of_birth, "Date of Birth", :class => 'control-label'
+          = text_field :form, :date_of_birth, :class => 'form-control'
 
         %div{:class => 'form_group'}
           = label :form, :phone_number, "Phone Number", :class => 'control-label'
@@ -27,11 +27,11 @@
 
         %div{:class => 'form_group'}
           = label :form, :preferred_language, "Preferred Language", :class => 'control-label'
-          = select :form, :preffered_language, ["English"], :class => 'form-control'
+          = select :form, :preferred_language, ["English"], :class => 'form-control'
 
         %div{:class => 'form_group'}
           = label :form, :medical_facility, "Medical Facility", :class => 'control-label'
-          = text_field :form, :medical_facilty, :class => 'form-control'
+          = text_field :form, :medical_facility, :class => 'form-control'
 
         %div{:class => 'form_group'}
           = label :form, :cancer_care_provider, "Cancer Care Provider", :class => 'control-label'
@@ -75,9 +75,9 @@
               = check_box :form, :radiation, :class => 'checkbox'
               Radiation current/pending/within six months
           %div{:class => 'checkbox'}
-            //= label :form, :metastic, "Metastic Breast Cancer/Stage IV"
+            //= label :form, :late_stage, "Metastic Breast Cancer/Stage IV"
             %label
-              = check_box :form, :metastic, :class => 'checkbox'
+              = check_box :form, :late_stage, :class => 'checkbox'
               Metastatic Breast Cancer/Stage IV
 
         %div{:class => 'form_group'}
