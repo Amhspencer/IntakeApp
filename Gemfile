@@ -30,6 +30,7 @@ group :development,:test do
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'bcrypt', '3.1.7'
+  gem 'rake' #Not copied, necessary for TravisCI
 end
 
 gem 'haml'
