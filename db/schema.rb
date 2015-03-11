@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(:version => 20150308013217) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "work_email"
+    t.string   "password"
+    t.integer  "phone_number"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "organization"
