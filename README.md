@@ -6,8 +6,11 @@ Intake App for BCEF
 
 Note: Partners, Clients, and BCEF admins are the three stakeholders that will have some form of direct or indirect interaction with this app.
 
+=== Deploy to heroku ===
+- If "push heroku master" is rejected, make a new folder and clone everything from local app to that new folder.
+- Heroku DB error: should run "heroku run rake db:migrate" and "herku run rake db:seed" again
 
-
+=== Info ===
 Introduction interview video with BCEF:
 http://youtu.be/C0hG3FG5_zg
 
@@ -21,4 +24,4 @@ Heroku:
 http://bcef.herokuapp.com/
 
 Collaboration Folder:
-https://drive.google.com/a/berkeley.edu/folderview?id=0B8Lf25J0nO4ib0FkSHFkYkFxYXM&usp=sharing_eid
+https://drive.google.com/drive/u/1/#folders/0B8Lf25J0nO4ibXpNNVdQMDJXVW8
