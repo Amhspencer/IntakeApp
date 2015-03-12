@@ -7,7 +7,6 @@ gem 'bcrypt-ruby', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'bootstrap-sass', '~>3.2.0'
 gem 'autoprefixer-rails'
 
@@ -29,11 +28,21 @@ gem 'jquery-rails'
 #Sections copied from HW gemfile by Michael:
 group :development,:test do  
   # ... other gems
-  gem 'sqlite3'   # added by Peter, this is required to deploy on heroku
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'bcrypt', '3.1.7'
   gem 'rake' #Not copied, necessary for TravisCI
+end
+
+group :development, :test do # added by Peter, this is required to deploy on heroku
+  gem 'sqlite3'
+  gem 'ruby-debug19'
+  gem 'rspec-rails', '~> 2.14.0'
+end
+
+group :production do # added by Peter, this is required to deploy on heroku
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'haml'
