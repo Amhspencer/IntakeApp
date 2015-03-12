@@ -44,6 +44,7 @@ end
 group :production, :staging do # added by Peter, this is required to deploy on heroku
   gem 'pg'
   gem 'rails_12factor'
+  gem 'thin'
 end
 
 gem 'haml'
