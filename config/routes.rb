@@ -1,6 +1,5 @@
 IntakeApp::Application.routes.draw do
 
-
   get "admin/new"
 
   resources :forms
@@ -15,6 +14,8 @@ IntakeApp::Application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :users
 
+  get    'createpartner'  => 'partners#new'
+  resources :partners
 
   get 'admin/index'
 

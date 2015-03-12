@@ -1,0 +1,43 @@
+%div{:class => 'container master-container'}
+  %h1 Create new Partner account
+  %div{:class => 'row'}
+    %div{:class => 'col-md-9'}
+
+      = form_tag partners_path do
+
+        - if @partner.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(@partner.errors.count, "error")
+              "prohibited this user from being saved:"
+            %ul 
+              - @partner.errors.full_messages.each do |msg|
+                %li= msg
+
+        %div{:class => 'form_group'}
+          = label :partner, :name, "Name", :class => 'control-label'
+          = text_field :partner, :name, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :partner, :email, "Email", :class => 'control-label'
+          = text_field :partner, :email, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :partner, :password, "Password", :class => 'control-label'
+          = password_field :partner, :password, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :partner, :organization, "Organization", :class => 'control-label'
+          = text_field :partner, :organization, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :partner, :phone_number, "Phone Number", :class => 'control-label'
+          = text_field :partner, :phone_number, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :partner, :work_email, "Work Email", :class => 'control-label'
+          = text_field :partner, :work_email, :class => 'form-control'
+
+        <br />
+        %div{:class => 'form_group'}
+          = submit_tag "Create new partner", :class => 'btn btn-primary'

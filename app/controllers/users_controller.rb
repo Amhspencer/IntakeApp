@@ -20,16 +20,8 @@ class UsersController < ApplicationController
 
   # create new user, either Admin or Partner
   def new
-    @user = User.new
   end
 
   def create
-    @user = User.create!(params[:user])
-    if @user.save
-      flash[:success] = "User create successfully!"
-      redirect_to @user
-    else
-      render 'new'
-    end
   end
 end
