@@ -29,6 +29,7 @@ gem 'jquery-rails'
 #Sections copied from HW gemfile by Michael:
 group :development,:test do  
   # ... other gems
+  gem 'sqlite3'   # added by Peter, this is required to deploy on heroku
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'bcrypt', '3.1.7'
