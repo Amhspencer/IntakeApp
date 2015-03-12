@@ -1,17 +1,20 @@
 IntakeApp::Application.routes.draw do
 
 
+  get "admin/new"
+
   resources :forms
   get "users/new"
 
   get "sessions/new"
 
   #root                'static_pages#home
-  get    'signup'  => 'users#new'
+  get    'createuser'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
+
 
   get 'admin/index'
 
