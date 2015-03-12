@@ -36,11 +36,12 @@ end
 
 group :development, :test do # added by Peter, this is required to deploy on heroku
   gem 'sqlite3'
+  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
   gem 'ruby-debug19'
   gem 'rspec-rails', '~> 2.14.0'
 end
 
-group :production do # added by Peter, this is required to deploy on heroku
+group :production, :staging do # added by Peter, this is required to deploy on heroku
   gem 'pg'
   gem 'rails_12factor'
 end
