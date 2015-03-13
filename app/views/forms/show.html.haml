@@ -1,44 +1,42 @@
-%h1 Diplaying Form ID: #{@form.id}
+%div{:class => 'container'}
+  %h1{:class => 'text-center'} Diplaying Form ID: #{@form.id}
+  %div{:class => 'row'}
+    %div{:class => 'col-md-9'}
+      %label First Name:
+      %p #{@form.first_name}
 
-%p First Name:
-%p #{@form.first_name}
+      %label Middle Initial:
+      %p #{@form.middle_initial}
 
-%p Middle Initial:
-%p #{@form.middle_initial}
+      %label Last Name:
+      %p #{@form.last_name}
 
-%p Last Name:
-%p #{@form.last_name}
+      %label Date of Birth:
+      %p #{@form.date_of_birth}
 
-%p Date of Birth:
-%p #{@form.date_of_birth}
+      %label Phone Number:
+      %p #{@form.phone_number}
 
-%p Phone Number:
-%p #{@form.phone_number}
+      %label Preferred Language:
+      %p #{@form.preferred_language}
 
-%p Preferred Language:
-%p #{@form.preferred_language}
+      %label Medical Facility:
+      %p #{@form.medical_facility}
 
-%p Medical Facility:
-%p #{@form.medical_facility}
+      %label Cancer Care Provider:
+      %p #{@form.cancer_care_provider}
 
-%p Cancer Care Provider:
-%p #{@form.cancer_care_provider}
+      %label BCEF Service Area:
+      %p #{@form.service_area}
 
-%p BCEF Service Area:
-%p #{@form.service_area}
+      %label Active Breast Cancer Treatment:
+      %p Surgery: #{@form.surgery}
+      %p Chemo: #{@form.chemo}
+      %p Radiation: #{@form.radiation}
+      %p Metastic Breast Cancer/Stage IV: #{@form.late_stage}
 
-%p Active Breast Cancer Treatment:
-%p Surgery:
-%p #{@form.surgery}
-%p Chemo:
-%p #{@form.chemo}
-%p Radiation:
-%p #{@form.radiation}
-%p Metastic Breast Cancer/Stage IV:
-%p #{@form.late_stage}
+      %label BCEF Individual Income Requirement of $2,000 or less per month:
+      %p #{@form.income}
 
-%p BCEF Individual Income Requirement of $2,000 or less per month:
-%p #{@form.income}
-
-%p Important Additional Information. Please contact me before contacting this client:
-%p #{@form.additional_info}
+      %label Important Additional Information. Please contact me before contacting this client:
+      %p #{@form.additional_info}
