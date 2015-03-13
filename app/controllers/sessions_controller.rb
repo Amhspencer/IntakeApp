@@ -6,7 +6,13 @@ class SessionsController < ApplicationController
     user = User.where(email: params[:session][:email].downcase).first
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
+      if session[:user_role] == "Partner"
+        redirect_to partner_dashboard_path
+      else
+        # redirect to admin dashboard, for now just redirect here
+        redirect_to user
+      end
+      
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
