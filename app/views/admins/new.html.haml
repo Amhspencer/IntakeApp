@@ -1,0 +1,39 @@
+%div{:class => 'container master-container'}
+  %h1 Create new Admin account
+  %div{:class => 'row'}
+    %div{:class => 'col-md-9'}
+
+      = form_tag admins_path do
+
+        - if @admin.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(@admin.errors.count, "error")
+              "prohibited this user from being saved:"
+            %ul 
+              - @admin.errors.full_messages.each do |msg|
+                %li= msg
+
+        %div{:class => 'form_group'}
+          = label :admin, :name, "Name", :class => 'control-label'
+          = text_field :admin, :name, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :admin, :email, "Email", :class => 'control-label'
+          = text_field :admin, :email, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :admin, :password, "Password", :class => 'control-label'
+          = password_field :admin, :password, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :admin, :phone_number, "Phone Number", :class => 'control-label'
+          = text_field :admin, :phone_number, :class => 'form-control'
+
+        %div{:class => 'form_group'}
+          = label :admin, :work_email, "Work Email", :class => 'control-label'
+          = text_field :admin, :work_email, :class => 'form-control'
+
+        <br />
+        %div{:class => 'form_group'}
+          = submit_tag "Create new admin", :class => 'btn btn-primary'
