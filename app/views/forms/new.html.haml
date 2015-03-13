@@ -8,109 +8,110 @@
         %div{:class => 'form_group'}
           = label :form, :first_name, "First Name", :class => 'control-label'
           = text_field :form, :first_name, :class => 'form-control'
+        %p
 
         %div{:class => 'form_group'}
           = label :form, :middle_initial, "Middle Initial", :class => 'control-label'
           = text_field :form, :middle_initial, :class => 'form-control'
+        %p
 
         %div{:class => 'form_group'}
           = label :form, :last_name, "Last Name", :class => 'control-label'
           = text_field :form, :last_name, :class => 'form-control'
+        %p
 
         %div{:class => 'form_group'}
           = label :form, :date_of_birth, "Date of Birth", :class => 'control-label'
           = text_field :form, :date_of_birth, :class => 'form-control'
+        %p
 
         %div{:class => 'form_group'}
           = label :form, :phone_number, "Phone Number", :class => 'control-label'
           = phone_field :form, :phone_number, :class => 'form-control'
+        %p
 
         %div{:class => 'form_group'}
           = label :form, :preferred_language, "Preferred Language", :class => 'control-label'
           = select :form, :preferred_language, ["English"], :class => 'form-control'
 
+        %p
         %div{:class => 'form_group'}
           = label :form, :medical_facility, "Medical Facility", :class => 'control-label'
           = text_field :form, :medical_facility, :class => 'form-control'
 
+        %p
         %div{:class => 'form_group'}
           = label :form, :cancer_care_provider, "Cancer Care Provider", :class => 'control-label'
           = text_field :form, :cancer_care_provider, :class => 'form-control'
 
+        %p
         %div{:class => 'form_group'}
           = label_tag "BCEF Service Area"
           %div{:class => 'row'}
             %div{:class => 'col-md-3'}
               %div{:class => 'radio'}
-                //= label :form, :service_area, "San Fransico County", :class => 'radio control-label'
                 %label
                   = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
                   San Francisco County
               %div{:class => 'radio'}
-                //= label :form, :service_area, "San Mateo County", :class => 'radio control-label'
                 %label
                   = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
                   San Mateo County
               %div{:class => 'radio'}
-                //= label :form, :service_area, "Santa Clara County", :class => 'radio control-label'
                 %label
                   = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
                   Santa Clara County
 
+        %p
         %div{:class => 'form_group'}
           = label_tag "Active Breast Cancer Treatment"
           %div{:class => 'checkbox'}
-            //= label :form, :surgery, "Chemo current/pending/within six months"
             %label
               = check_box :form, :surgery, :class => 'checkbox'
               Chemo current/pending/within six months
           %div{:class => 'checkbox'}
-            //= label :form, :chemo, "Chemo current/pending/within six months"
             %label
               = check_box :form, :chemo, :class => 'checkbox'
               Chemo current/pending/within six months
           %div{:class => 'checkbox'}
-            //= label :form, :radiation, "Radiation current/pending/within six months"
             %label
               = check_box :form, :radiation, :class => 'checkbox'
               Radiation current/pending/within six months
           %div{:class => 'checkbox'}
-            //= label :form, :late_stage, "Metastic Breast Cancer/Stage IV"
             %label
               = check_box :form, :late_stage, :class => 'checkbox'
               Metastatic Breast Cancer/Stage IV
 
+        %p
         %div{:class => 'form_group'}
           = label_tag "BCEF Individual Income Requirement of $2,000 or less per month"
           %div{:class => 'radio'}
-            //= label :form, :income, "Yes", :class => 'radio control-label'
             %label
               = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
               Yes
           %div{:class => 'radio'}
-            //= label :form, :income, "No", :class => 'radio control-label'
             %label
               = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
               No
           %div{:class => 'radio'}
-            //= label :form, :income, "Unsure", :class => 'radio control-label'
             %label
               = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
               Unsure
 
+        %p
         %div{:class => 'form_group'}
           %div{:class => 'checkbox'}
-            //= label :form, :additional_info, "Important Additional infomation. Please contact me before contacting this client.", :class => 'checkbox control-form'
             %label
               = check_box :form, :additional_info
               Important additional infomation. Please contact me before contacting this client.
 
+        %p
         %div{:class => 'form_group'}
           %div{:class => 'checkbox'}
-            //= label :form, :consent, "My signature indicates that above cliet has given verbal or written consent for BCEF to contact her/him directly to complete BCEF's application for emergency financial assistance'.", :class => 'checkbox control-form'
             %label
               = check_box :form, :consent
               My signature indicates that above cliet has given verbal or written consent for BCEF to contact her/him directly to complete BCEF's application for emergency financial assistance.
 
+        %p
         %div{:class => 'form_group'}
           = submit_tag "Submit Intake Form", :class => 'button'
