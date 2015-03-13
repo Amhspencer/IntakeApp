@@ -26,6 +26,9 @@ class FormsController < ApplicationController
   def confirmation
   end
   
+  def showToProcess
+    @form = Form.find(params[:id])
+  end
 
 
   def processForm
