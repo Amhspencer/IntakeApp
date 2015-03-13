@@ -36,12 +36,11 @@
   %tbody
     - @processedForms.each do |form|
       %tr
-        %td= link_to "Form #{form.id}", showToProcess_form_path(form)
+        %td= link_to "Form #{form.id}", showToAdmin_form_path(form)
         %td= form.created_at.strftime("%m/%d/%y")
 
 
-
-= button_to 'New Client Form', new_form_path, :method => :get
+= button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
 
 = button_to 'Create New Admin Account', new_admin_path, :method => :get
 

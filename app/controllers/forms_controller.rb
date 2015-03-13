@@ -26,16 +26,20 @@ class FormsController < ApplicationController
   def confirmation
   end
   
-  def showToProcess
+  def showToAdmin
     @form = Form.find(params[:id])
   end
 
+
+  def showToProcess
+    @form = Form.find(params[:id])
+  end
 
   def processForm
     @form = Form.find(params[:id])
     @form.processed = true
     @form.save!
-    redirect_to form_path(@form)
+    redirect_to admin_path(session[:user_id])
   end
 
 end
