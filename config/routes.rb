@@ -1,8 +1,12 @@
 IntakeApp::Application.routes.draw do
 
-  get "static_pages/disclaimer"
 
+  get "static_pages/disclaimer"
   get "static_pages/confirmation"
+  get "static_pages/partnerdashboard"
+  #shortened partner dashboard link
+  get "partner_dashboard" => "static_pages#partnerdashboard"
+
 
   get "admin/new"
 
@@ -23,8 +27,6 @@ IntakeApp::Application.routes.draw do
 
   get 'admins/index'
 
-  get 'disclaimer' => 'forms#disclaimer'
-  get 'confirmation' => 'forms#confirmation'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

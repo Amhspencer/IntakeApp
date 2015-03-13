@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def confirmation
   end
+
+  def partnerdashboard
+  end
 end
