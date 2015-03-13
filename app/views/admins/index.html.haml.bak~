@@ -1,5 +1,5 @@
 -#  This file is app/views/admin/index.html.haml
-%h1{:class => 'text-center'} Displaying #{@admin.name}
+%h1 All Clients
 
 %table#clients
   %thead

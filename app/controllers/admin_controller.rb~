@@ -1,0 +1,76 @@
+class MoviesController < ApplicationController
+
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @movie = Movie.find(id) # look up movie by unique ID
+    # will render app/views/movies/show.<extension> by default
+  end
+
+  def index
+    if session[:selectedRatingKey].nil?
+      session[:selectedRatingKey] = Movie.uniq.pluck(:rating)
+    end
+    #@sortHighlight = params[:"sortBy"]
+    if params[:"sortBy"].nil?
+      session[:sortHighlight] = session[:sortHighlight]
+    else
+      session[:sortHighlight] = params[:"sortBy"]
+    end
+    @selectedRatings = params[:"ratings"]
+    @all_ratings = Movie.ratings
+    if not @selectedRatings.nil?
+      @selectedRatingKeys = params[:"ratings"].keys
+      session[:selectedRatingKey]=@selectedRatingKeys
+      @movies = Movie.where(rating: @selectedRatingKeys).order(session[:"sortHighlight"])
+    elsif not session.nil?
+
+      @movies = Movie.where(rating: session[:selectedRatingKey]).order(session[:"sortHighlight"])
+    else
+      if session[:selectedRatingKey].nil?
+        puts "***************************************************"
+      end
+      @movies = Movie.order(params[:"sortBy"])
+    end
+
+  end
+
+  def new
+    # default: render 'new' template
+  end
+
+  def create
+    @movie = Movie.create!(params[:movie])
+    flash[:notice] = "#{@movie.title} was successfully created."
+    redirect_to movies_path
+  end
+
+  def edit
+    @movie = Movie.find params[:id]
+  end
+
+  def update
+    @movie = Movie.find params[:id]
+    @movie.update_attributes!(params[:movie])
+    flash[:notice] = "#{@movie.title} was successfully updated."
+    redirect_to movie_path(@movie)
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    flash[:notice] = "Movie '#{@movie.title}' deleted."
+    redirect_to movies_path
+  end
+
+  def same_director
+    @movie = Movie.find(params[:id])
+    director = movie.director
+    if director.empty?
+      flash[:warning] = "'#{@movie.title}' has no director info."
+      redirect_to movies_path
+    else
+      @movies = Movie.find_all_movies_by_director(director)
+    end
+  end
+
+end

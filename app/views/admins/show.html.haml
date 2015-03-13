@@ -1,53 +1,15 @@
--# in app/views/admins/show.html.haml
+-#  This file is app/views/admins/show.html.haml
+%h1{:class => 'text-center'} Displaying #{@admin.name}
 
-%h2 Form info for #{@client.name}
+%table#clients
+  %thead
+    %tr
+      %th{:class => (session[:sortHighlight]=='name' ? "hilite" : nil)}= link_to "Client Name", "My Name", :id => "name_header"
+      %th{:class => (session[:sortHighlight]=='area' ? "hilite" : nil)}= link_to "Service Area", "My Area", :id => "area_header"
+      %th{:class => (session[:sortHighlight]=='medical_facility' ? "hilite" : nil)}= link_to "Medical Facility", "My Medical Facility", :id => "medical_facility_header"
+      %th{:class => (session[:sortHighlight]=='language' ? "hilite" : nil)}= link_to "Language", "My Language", :id => "language_header"
+      %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
+      %th Complete Info
+  %tbody
 
-%ul#details
-  %li
-    Date of Birth:
-    = @client.dob
-  %li
-    Phone Number:
-    = @client.phone
-  %li
-    Preferred Language:
-    = @client.language
-  %li
-    Medical Facility:
-    = @client.facility
-  %li
-    Cancer Care Provider:
-    = @client.provider
-  %li
-    BCEF Service Area:
-    = @client.area
-  %li
-    Active Treatment:
-    = @client.active_treatment
-  %li
-    Income:
-    = @client.income
-  %li
-    Contact Provider before client?:
-    = @client.need_additional_info
-  %li
-    Partner Name:
-    = @client.partner_name
-  %li
-    Partner Phone:
-    = @client.partner_phone
-  %li
-    Partner Email:
-    = @client.partner_email
-  %li
-    Partner Agency:
-    = @client.partner_agency
-  %li
-    Date Completed:
-    =  @movie.completed_date.strftime("%B %d, %Y")
-
-%h3 Addition Info:
-
-%p#description= @movie.additional_info
-
-= link_to 'Back to client list', client_path
+= link_to 'Add new client', new_form_path
