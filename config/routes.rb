@@ -1,34 +1,35 @@
 IntakeApp::Application.routes.draw do
 
-
+  # Static pages - Used to display additional information
   get "static_pages/disclaimer"
   get "static_pages/confirmation"
   get "static_pages/partnerdashboard"
-  #shortened partner dashboard link
-  get "partner_dashboard" => "static_pages#partnerdashboard"
 
-
-  get "admin/new"
-
-  resources :forms
-  get "users/new"
-
-  get "sessions/new"
-
-  root to:                'sessions#new'
+  # Login - Logout - Session
   get    'createuser'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  resources :users
 
-  get    'createpartner'  => 'partners#new'
+  # root - index of : bcef.herokuapp.com
+  root to:  'sessions#new'
+
+  # Resouces - Including: new, show, edit etc ...
+  resources :users
+  resources :forms
   resources :partners
-  get    'createadmin'  => 'admins#new'
   resources :admins
 
-  get 'admins/index'
+  # Shortcut - Rather than long action routes
+  get "partner_dashboard" => "static_pages#partnerdashboard"
+  get    'createpartner'  => 'partners#new'
+  get    'createadmin'  => 'admins#new'
 
+  # Miscs
+  get "admin/new"
+  get "users/new"
+  get "sessions/new"
+  get 'admins/index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
