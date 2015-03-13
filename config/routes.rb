@@ -11,6 +11,8 @@ IntakeApp::Application.routes.draw do
   get "admin/new"
 
   resources :forms
+  post 'forms/process/:id(.:format)' => 'forms#processForm', :as => :process_form
+  
   get "users/new"
 
   get "sessions/new"

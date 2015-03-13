@@ -1,15 +1,44 @@
 -#  This file is app/views/admins/show.html.haml
 %h1{:class => 'text-center'} Displaying #{@admin.name}
 
-%table#clients
+-#
+  %table#clients
+    %thead
+      %tr
+        %th{:class => (session[:sortHighlight]=='name' ? "hilite" : nil)}= link_to "Client Name", "My Name", :id => "name_header"
+        %th{:class => (session[:sortHighlight]=='area' ? "hilite" : nil)}= link_to "Service Area", "My Area", :id => "area_header"
+        %th{:class => (session[:sortHighlight]=='medical_facility' ? "hilite" : nil)}= link_to "Medical Facility", "My Medical Facility", :id => "medical_facility_header"
+        %th{:class => (session[:sortHighlight]=='language' ? "hilite" : nil)}= link_to "Language", "My Language", :id => "language_header"
+        %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
+        %th Complete Info
+    %tbody
+
+%h2 Unprocessed Forms
+%table#forms
   %thead
     %tr
-      %th{:class => (session[:sortHighlight]=='name' ? "hilite" : nil)}= link_to "Client Name", "My Name", :id => "name_header"
-      %th{:class => (session[:sortHighlight]=='area' ? "hilite" : nil)}= link_to "Service Area", "My Area", :id => "area_header"
-      %th{:class => (session[:sortHighlight]=='medical_facility' ? "hilite" : nil)}= link_to "Medical Facility", "My Medical Facility", :id => "medical_facility_header"
-      %th{:class => (session[:sortHighlight]=='language' ? "hilite" : nil)}= link_to "Language", "My Language", :id => "language_header"
-      %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
-      %th Complete Info
+      %th Form ID
+      %th Date
+
   %tbody
+    - @unprocessedForms.each do |form|
+      %tr
+        %td= link_to "Form #{form.id}", form_path(form)
+        %td= form.created_at.strftime("%m/%d/%y")
+
+%h2 Processed Forms
+%table#forms
+  %thead
+    %tr
+      %th Form ID
+      %th Date
+
+  %tbody
+    - @processedForms.each do |form|
+      %tr
+        %td= link_to "Form #{form.id}", form_path(form)
+        %td= form.created_at.strftime("%m/%d/%y")
+
+
 
 = link_to 'Add new client', new_form_path

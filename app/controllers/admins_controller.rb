@@ -3,7 +3,8 @@ class AdminsController < ApplicationController
   def show
     id = params[:id]
     @admin = Admin.find(id)
-    @allforms = Form.where(:processed => false)
+    @unprocessedForms = Form.where(:processed => false)
+    @processedForms = Form.where(:processed => true)
   end
 
 
