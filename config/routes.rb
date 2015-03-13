@@ -7,7 +7,7 @@ IntakeApp::Application.routes.draw do
 
   get "sessions/new"
 
-  #root                'static_pages#home
+  root to:                'sessions#new'
   get    'createuser'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
