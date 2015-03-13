@@ -13,7 +13,7 @@ IntakeApp::Application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :users
 
-  get 'admin/index'
+  get 'admins/index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
