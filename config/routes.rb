@@ -26,6 +26,7 @@ IntakeApp::Application.routes.draw do
 
   get    'createpartner'  => 'partners#new'
   resources :partners
+  get    'createadmin'  => 'admins#new'
   resources :admins
 
   get 'admins/index'
