@@ -19,6 +19,9 @@ IntakeApp::Application.routes.draw do
 
   get 'admins/index'
 
+  get 'disclaimer' => 'forms#disclaimer'
+  get 'confirmation' => 'forms#confirmation'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,21 @@
+%h1.pagename Disclaimer
+
+%p Knock knock.
+
+Who's there?
+
+Panther
+
+Panther who?
+
+Panther no panth, I'm going thwimming!
+
+
+
+This will hold BCEF's "disclaimer" when they send it to us.
+
+= form_for @question do |w|
+  %p
+    = w.select 'question_status',  [['English', 1], ['Spanish', 2], ['Russian', 3], ['Mandarin', 4], ['Cantonese', 5], ['Vietnamese', 6], ['Tagalog', 7]
+
+= link_to 'Continue', form_path

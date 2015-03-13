@@ -8,8 +8,7 @@ class FormsController < ApplicationController
 
 
 
-  def new
-    
+  def new    
   end
 
   def create
@@ -18,4 +17,10 @@ class FormsController < ApplicationController
     redirect_to form_path(@form)
   end
 
+  def disclaimer
+  end
+
+  def confirmation
+  end
+  
 end
