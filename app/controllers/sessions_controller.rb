@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       if session[:user_role] == "Partner"
-        redirect_to partner_dashboard_path
+        redirect_to partner_path user.id
       else
         # redirect to admin dashboard, for now just redirect here
         redirect_to user
