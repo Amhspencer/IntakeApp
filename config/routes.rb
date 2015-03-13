@@ -1,9 +1,7 @@
 IntakeApp::Application.routes.draw do
 
-  # Static pages - Used to display additional information
-  get "static_pages/disclaimer"
-  get "static_pages/confirmation"
-  get "static_pages/partnerdashboard"
+  # root - index of : bcef.herokuapp.com
+  root to:  'sessions#new'
 
   # Login - Logout - Session
   get    'createuser'  => 'users#new'
@@ -11,14 +9,19 @@ IntakeApp::Application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  # root - index of : bcef.herokuapp.com
-  root to:  'sessions#new'
+  # Process Form Routes
+  post 'forms/process/:id(.:format)' => 'forms#processForm', :as => :process_form
+  
+  # Static pages - Used to display additional information
+  get "static_pages/disclaimer"
+  get "static_pages/confirmation"
+  get "static_pages/partnerdashboard"
 
   # Resouces - Including: new, show, edit etc ...
   resources :users
-  resources :forms
   resources :partners
   resources :admins
+  resources :forms
 
   # Shortcut - Rather than long action routes
   get "partner_dashboard" => "static_pages#partnerdashboard"

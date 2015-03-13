@@ -13,9 +13,12 @@ class FormsController < ApplicationController
 
   def create
     @form = Form.create!(params[:form])
+    @form.processed = false
+    @form.save!
     # Redirect to the end page, for now redirects to a show that form
     redirect_to form_path(@form)
   end
+
 
   def disclaimer
   end
@@ -23,4 +26,14 @@ class FormsController < ApplicationController
   def confirmation
   end
   
+
+
+  def processForm
+    @form = Form.find(params[:id])
+    @form.processed = true
+    @form.save!
+    redirect_to form_path(@form)
+  end
+
 end
+
