@@ -25,7 +25,7 @@ IntakeApp::Application.routes.draw do
   resources :forms
 
   # Shortcut - Rather than long action routes
-  get "partner_dashboard" => "static_pages#partnerdashboard"
+#get "partner_dashboard" => "static_pages#partnerdashboard"
   get    'createpartner'  => 'partners#new'
   get    'createadmin'  => 'admins#new'
 

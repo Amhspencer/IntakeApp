@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     	@user = User.find(params[:id])
       if @user.organization.nil? || @user.organization.blank?
         @user_role = "Admin"
+        redirect_to admin_path @user.id
       else
         @user_role = "Partner"
+        redirect_to partner_path @user.id
       end
     end
   end
