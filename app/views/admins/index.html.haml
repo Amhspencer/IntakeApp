@@ -1,0 +1,15 @@
+-#  This file is app/views/admins/index.html.haml
+%h1 All Clients
+
+%table#clients
+  %thead
+    %tr
+      %th{:class => (session[:sortHighlight]=='name' ? "hilite" : nil)}= link_to "Client Name", "My Name", :id => "name_header"
+      %th{:class => (session[:sortHighlight]=='area' ? "hilite" : nil)}= link_to "Service Area", "My Area", :id => "area_header"
+      %th{:class => (session[:sortHighlight]=='medical_facility' ? "hilite" : nil)}= link_to "Medical Facility", "My Medical Facility", :id => "medical_facility_header"
+      %th{:class => (session[:sortHighlight]=='language' ? "hilite" : nil)}= link_to "Language", "My Language", :id => "language_header"
+      %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
+      %th Complete Info
+  %tbody
+
+= link_to 'Add new client', new_form_path

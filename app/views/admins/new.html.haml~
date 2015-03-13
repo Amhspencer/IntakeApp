@@ -1,0 +1,20 @@
+%h1 Add New Client
+
+= form_tag client_path do
+
+  = label :client, :name, 'Name'
+  = text_field :client, 'title'
+
+  = label :client, :area, 'Service Area'
+  = select :client, :area, ['San Francisco County', 'San Mateo County', 'Santa Clara County']
+
+  = label :client, :medical_facility, 'Medical Facility'
+  = text_field :client, 'medical_facility'
+
+  = label :client, :language, 'Preferred Language'
+  = text_field :client, 'language'
+
+  = label :client, :date_completed, 'Date Completed'
+  = date_select :movie, :'date_completed'
+
+  = submit_tag 'Save Changes'
