@@ -5,4 +5,4 @@ env:
   - DB=sqlite
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate
-  - cucumber features
+  - bundle exec cucumber features
