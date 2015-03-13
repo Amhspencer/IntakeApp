@@ -1,0 +1,4 @@
+.content
+  = render partial: "form"
+
+  = button_to 'Mark as Processed', process_form_path(@form), :method => :post

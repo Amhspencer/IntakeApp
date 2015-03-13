@@ -23,7 +23,7 @@
   %tbody
     - @unprocessedForms.each do |form|
       %tr
-        %td= link_to "Form #{form.id}", form_path(form)
+        %td= link_to "Form #{form.id}",  showToProcess_form_path(form)
         %td= form.created_at.strftime("%m/%d/%y")
 
 %h2 Processed Forms
@@ -36,9 +36,13 @@
   %tbody
     - @processedForms.each do |form|
       %tr
-        %td= link_to "Form #{form.id}", form_path(form)
+        %td= link_to "Form #{form.id}", showToProcess_form_path(form)
         %td= form.created_at.strftime("%m/%d/%y")
 
 
 
-= link_to 'Add new client', new_form_path
+= button_to 'New Client Form', new_form_path
+
+= button_to 'Create New Admin Account', new_admin_path, :method => :get
+
+= button_to 'Create New Partner Account', new_partner_path, :method => :get

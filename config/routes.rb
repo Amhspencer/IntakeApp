@@ -10,6 +10,7 @@ IntakeApp::Application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   # Process Form Routes
+  get  'forms/process/:id(.:format)' => 'forms#showToProcess', :as => :showToProcess_form
   post 'forms/process/:id(.:format)' => 'forms#processForm', :as => :process_form
   
   # Static pages - Used to display additional information
