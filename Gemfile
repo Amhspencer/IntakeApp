@@ -34,7 +34,7 @@ group :development,:test do
   gem 'rake' #Not copied, necessary for TravisCI
 end
 
-group :development, :test do # added by Peter, this is required to deploy on heroku
+group :development, :test do
   gem 'sqlite3'
   gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
   gem 'ruby-debug19'
