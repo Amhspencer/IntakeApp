@@ -1,9 +1,10 @@
 Given /the following admins exist/ do |admins_table|
   admins_table.hashes.each do |admin|
-    Admin.create admin
+    Admin.create! admin
   end
   #flunk "Unimplemented"
 end
+
 When /I go to the "(.*)" page/ do |link|
 	visit(link)
 end

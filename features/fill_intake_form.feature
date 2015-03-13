@@ -6,7 +6,10 @@ Feature:  Fill out intake form
 
 Background:
 
-	Given that I am logged in as a partner
+Given the following partners exist:
+| email               | name      | password             |  phone_number | work_email       |
+| partner@andy.com    | Woody     | ToyStory             |  5101231234   | Woody@pixar.com  |
+
 
 Scenario:
 
