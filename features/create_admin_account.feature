@@ -27,10 +27,3 @@ Scenario: As an admin, i can create new admins
   And I fill in "admin_work_email" with "wsmith@kaiser.com"
   And I click the "Create new admin" button
   Then I should see "Admin created successfully!"
-
-#When I select see accounts page.
-#And choose create new admin account.
-#And fill in the required fields
-#And click submit
-#Then there should be a new admin account
-#And I should see it on the accounts page
