@@ -12,6 +12,13 @@ Given /the following partners exist/ do |partners_table|
   #flunk "Unimplemented"
 end
 
+Given /the following forms exist/ do |forms_table|
+  forms_table.hashes.each do |form|
+    Form.create form
+  end
+  #flunk "Unimplemented"
+end
+
 When /I go to the "(.*)" page/ do |link|
 	visit(link)
 end
@@ -50,4 +57,10 @@ end
 
 And /I check the checkbox "(.*)"/ do |checkbox|
 	check checkbox
+end
+
+And /there will be "(.*)" forms in "(.*)" table/ do |num1, form1|
+  temp1 = 'table#' + form1 + ' tr'
+  rows_in_table = page.all(temp1).size - 1
+  assert(num1.to_i == rows_in_table, rows_in_table.to_s + " does not equal " + num1.to_s)
 end
