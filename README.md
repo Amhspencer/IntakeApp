@@ -23,5 +23,8 @@ https://codeclimate.com/github/Berkeley-BCEF/IntakeApp
 Heroku: 
 http://bcef.herokuapp.com/
 
+Travis CI:
+https://travis-ci.org/Berkeley-BCEF/IntakeApp
+
 Collaboration Folder:
 https://drive.google.com/drive/u/1/#folders/0B8Lf25J0nO4ibXpNNVdQMDJXVW8
