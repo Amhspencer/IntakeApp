@@ -1,15 +1,6 @@
 module SessionsHelper
   # Logs in the given user.
   def log_in(user)
-    /
-    session[:user_id] = user.id
-    if Partner.find(user.id)
-      session[:user_role] = :admin
-    elsif Partner.find(user.id)
-      session[:user_role] = :partner
-    end
-  end
-     / 
 
     session[:user_id] = user.id
     if user.admin? #user.organization.nil? || user.organization.blank?
@@ -21,10 +12,10 @@ module SessionsHelper
 
 
   # Logs out the current user.
-  def log_out
-    session.delete(:user_id)
-    @current_user = nil
-  end
+  #def log_out
+  #  session.delete(:user_id)
+  #  @current_user = nil
+  #end
   
   # Returns the current logged-in user (if any).
   def current_user
