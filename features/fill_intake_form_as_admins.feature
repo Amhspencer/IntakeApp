@@ -1,6 +1,8 @@
 Feature: Fill in Intake Form as an Admin
 	
-  As an Admin at BCEF I can fill out intake form.
+  As an Admin at BCEF.
+  I want to fill out the intake form
+  So I can send a client's information to be processed quickly.
 
 Background:
 

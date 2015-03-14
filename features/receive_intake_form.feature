@@ -1,6 +1,8 @@
 Feature: Receive intake form
 	
-	As an admin at BCEF, I can view my recently submmited form in dashboard.
+	As an admin user at BCEF
+  I want to view a recently submitted form
+  So I can start an application for the client.
 
 Background:
 

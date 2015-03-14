@@ -1,6 +1,8 @@
 Feature: Fill in Intake Form as a Partner
 	
-  As an Partner at BCEF I can fill out intake form.
+  As a qualified intake partner
+  I want to fill out the intake form
+  So I can send a client's information to be processed quickly.
 
 Background:
 
