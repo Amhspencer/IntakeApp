@@ -7,18 +7,17 @@ Feature: Create New Partner Account
 Background:
 
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | admin |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | t     |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | t     |
 
-Scenario: I need to be an admin to create a new admin
+Scenario: I need to be an admin to create a new admin. As an admin, i can create new admins
   When I go to the "/login" page
   And I fill in "session_email" with "andy@andy.com"
   And I fill in "session_password" with "andy123"
   And I click the "Log in" button
   Then I should see myself as an "Admin"
 
-Scenario: As an admin, i can create new admins
   When I go to the "/createadmin" page
   And I fill in "admin_name" with "Will Smith"
   And I fill in "admin_email" with "wsmith@yahoo.com"

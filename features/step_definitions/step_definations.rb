@@ -32,7 +32,8 @@ And /I click the "(.*)" button/ do |butn|
 end
 
 Then /I should see myself as an "(.*)"/ do |role|
-	assert page.body =~ /#{role}/
+	#assert page.body =~ /#{role}/
+	page.should have_content role
 end
 
 Then /I should see "(.*)"/ do |msg|

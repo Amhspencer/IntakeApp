@@ -5,9 +5,9 @@ Feature: Fill in Intake Form as an Admin
 Background:
 
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | admin |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | t     |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | t     |
 
 Scenario: After I login as an admin, I can create a new Client (Intake) Form
   When I go to the "/login" page
