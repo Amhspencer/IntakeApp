@@ -5,14 +5,7 @@
 
       = form_tag partners_path do
 
-        - if @partner.errors.any?
-          #error_explanation
-            %h2
-              = pluralize(@partner.errors.count, "error")
-              "prohibited this user from being saved:"
-            %ul 
-              - @partner.errors.full_messages.each do |msg|
-                %li= msg
+        
 
         %div{:class => 'form_group'}
           = label :partner, :name, "Name", :class => 'control-label'
@@ -41,3 +34,14 @@
         <br />
         %div{:class => 'form_group'}
           = submit_tag "Create new partner", :class => 'btn btn-primary'
+
+
+-#  Not doing anything at the moment
+  - if @partner.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(@partner.errors.count, "error")
+              "prohibited this user from being saved:"
+            %ul 
+              - @partner.errors.full_messages.each do |msg|
+                %li= msg

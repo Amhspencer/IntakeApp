@@ -5,14 +5,7 @@
 
       = form_tag admins_path do
 
-        - if @admin.errors.any?
-          #error_explanation
-            %h2
-              = pluralize(@admin.errors.count, "error")
-              "prohibited this user from being saved:"
-            %ul 
-              - @admin.errors.full_messages.each do |msg|
-                %li= msg
+
 
         %div{:class => 'form_group'}
           = label :admin, :name, "Name", :class => 'control-label'
@@ -37,3 +30,13 @@
         <br />
         %div{:class => 'form_group'}
           = submit_tag "Create new admin", :class => 'btn btn-primary'
+
+-# Not doing anything at the moment
+  - if @admin.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@admin.errors.count, "error")
+        "prohibited this user from being saved:"
+      %ul 
+        - @admin.errors.full_messages.each do |msg|
+          %li= msg

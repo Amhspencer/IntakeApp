@@ -9,14 +9,14 @@ class AdminsController < ApplicationController
 
 
   def new
-    @admin = Admin.new
+    #@admin = Admin.new
   end
 
   def create
     @admin = Admin.create!(params[:admin])
     if @admin.save
       flash[:success] = "Admin created successfully!"
-      redirect_to admin_path(@admin)
+      redirect_to admin_path(session[:user_id])
     else
       render 'new'
     end

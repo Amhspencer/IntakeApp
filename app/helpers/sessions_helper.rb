@@ -1,13 +1,24 @@
 module SessionsHelper
   # Logs in the given user.
   def log_in(user)
+    /
     session[:user_id] = user.id
-    if user.organization.nil? || user.organization.blank?
-      session[:user_role] = "Admin"
-    else
-      session[:user_role] = "Partner"
+    if Partner.find(user.id)
+      session[:user_role] = :admin
+    elsif Partner.find(user.id)
+      session[:user_role] = :partner
     end
   end
+     / 
+
+    session[:user_id] = user.id
+    if user.admin? #user.organization.nil? || user.organization.blank?
+      session[:user_role] = :admin
+    else
+      session[:user_role] = :partner
+    end
+  end
+
 
   # Logs out the current user.
   def log_out
