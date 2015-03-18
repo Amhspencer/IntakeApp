@@ -1,6 +1,8 @@
 Feature: notification when login fails
 	
-  When I type in the wrong username or password I will see a warning message.
+  As a user with an account
+  When I type in the wrong username or password
+  I will see a warning message so that I know my mistake.
 
 Background:
 
