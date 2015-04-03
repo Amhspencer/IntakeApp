@@ -1,6 +1,20 @@
-%h1.pagename disclaimer
+%h1.pagename Disclaimer
 
-%p This will hold BCEF's "disclaimer" when they send it to us. As well as a language selector that modifies the view of the form on the following page. 
+%button{:onclick => "document.getElementById('disclaimer').innerHTML = 'This will hold the disclaimer'", :type => "button"}
+  English
 
+%button{:onclick => "document.getElementById('disclaimer').innerHTML = 'Esto mantendrá la exención de responsabilidad'", :type => "button"}
+  Spanish
+
+%button{:onclick => "document.getElementById('disclaimer').innerHTML = 'Это будет держать отказ'", :type => "button"}
+  Russian
+
+%button{:onclick => "document.getElementById('disclaimer').innerHTML = '這將舉辦免責聲明'", :type => "button"}
+  Cantonese
+
+%button{:onclick => "document.getElementById('disclaimer').innerHTML = 'Điều này sẽ tổ chức khuyến cáo'", :type => "button"}
+  Vietnamese
+
+%p#disclaimer This will hold the disclaimer
 
 = link_to 'Continue', new_form_path
