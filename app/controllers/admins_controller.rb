@@ -2,9 +2,13 @@ class AdminsController < ApplicationController
 
   def show
     id = params[:id]
+    if !params[:sort] && session[:sort] then
+      redirect_to :action => "show", :id => session[:user_id], :sort => session[:sort]
+    end
     @admin = Admin.find(id)
     @unprocessedForms = Form.where(:processed => false)
-    @processedForms = Form.where(:processed => true)
+    @processedForms = Form.where(:processed => true).order(session[:sort]);
+    session[:sort] = params[:sort]
   end
 
 
