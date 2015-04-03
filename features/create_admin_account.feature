@@ -1,4 +1,4 @@
-Feature: Create New Partner Account
+Feature: Create New Admin Account
 	
   As an admin user at BCEF.
   So that more people at BCEF can process intake form.

@@ -16,6 +16,7 @@ class PartnersController < ApplicationController
   end
   
   def show
+    authenticate_user
   end
 
 # call this method first to make sure only admin can perform the action
