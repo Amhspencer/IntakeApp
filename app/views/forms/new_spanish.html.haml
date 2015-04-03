@@ -1,0 +1,117 @@
+%div{:class => 'container master-container'}
+  %h1 BCEF Formulario de Admisión
+  %div{:class => 'row'}
+    %div{:class => 'col-md-9'}
+
+      = form_tag forms_path do
+
+        %div{:class => 'form_group'}
+          = label :form, :first_name, "Nombre", :class => 'control-label'
+          = text_field :form, :first_name, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :middle_initial, "Inicial Del Segundo Nombre", :class => 'control-label'
+          = text_field :form, :middle_initial, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :last_name, "Apellido", :class => 'control-label'
+          = text_field :form, :last_name, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :date_of_birth, "Fecha de Nacimiento", :class => 'control-label'
+          = text_field :form, :date_of_birth, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :phone_number, "Número Telefónico", :class => 'control-label'
+          = phone_field :form, :phone_number, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :preferred_language, "Idioma Preferido", :class => 'control-label'
+          = select :form, :preferred_language, ["Español"], :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label :form, :medical_facility, "Información del Hospital", :class => 'control-label'
+          = text_field :form, :medical_facility, :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label :form, :cancer_care_provider, "Proveedor de Cuidados del Cáncer", :class => 'control-label'
+          = text_field :form, :cancer_care_provider, :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "BCEF Area De Servicio"
+          %div{:class => 'row'}
+            %div{:class => 'col-md-3'}
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
+                  San Francisco County
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
+                  San Mateo County
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
+                  Santa Clara County
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "Breast Activo Tratamiento del Cáncer (marque lo que corresponda)"
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :surgery, :class => 'checkbox'
+              Cirugía actual/pendiente/plazo de seis meses
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :chemo, :class => 'checkbox'
+              Chemo actual/pendiente/plazo de seis meses
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :radiation, :class => 'checkbox'
+              Actual Radiación/pendiente/plazo de seis meses
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :late_stage, :class => 'checkbox'
+              Cáncer de mama metastásico/Fase IV
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "Requisito BCEF Ingreso Personal de $ 2,000 o menos por mes"
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
+              Sí
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+              No
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+              Inseguro
+
+        %p
+        %div{:class => 'form_group'}
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :additional_info
+              Infomación adicional importante. Póngase en contacto conmigo antes de contactar con este cliente.
+
+        %p
+        %div{:class => 'form_group'}
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :consent
+              Mi firma indica que por encima cliet ha dado verbal o consentimiento para BCEF comunicarse con su escrito / él directamente para completar la solicitud de BCEF para la asistencia financiera de emergencia .
+
+        %p
+        %div{:class => 'form_group'}
+          = submit_tag "Enviar el formulario de admisión", :class => 'button'
