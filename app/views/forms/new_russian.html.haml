@@ -1,0 +1,117 @@
+%div{:class => 'container master-container'}
+  %h1 BCEF Потребление Форма
+  %div{:class => 'row'}
+    %div{:class => 'col-md-9'}
+
+      = form_tag forms_path do
+
+        %div{:class => 'form_group'}
+          = label :form, :first_name, "Имя", :class => 'control-label'
+          = text_field :form, :first_name, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :middle_initial, "Второй Инициал", :class => 'control-label'
+          = text_field :form, :middle_initial, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :last_name, "фамилия", :class => 'control-label'
+          = text_field :form, :last_name, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :date_of_birth, "Дата рождения", :class => 'control-label'
+          = text_field :form, :date_of_birth, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :phone_number, "Телефон Nunber", :class => 'control-label'
+          = phone_field :form, :phone_number, :class => 'form-control'
+        %p
+
+        %div{:class => 'form_group'}
+          = label :form, :preferred_language, "Предпочтительный Язык", :class => 'control-label'
+          = select :form, :preferred_language, ["русский"], :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label :form, :medical_facility, "Медицинские услуги", :class => 'control-label'
+          = text_field :form, :medical_facility, :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label :form, :cancer_care_provider, "Уход Рак Поставщик", :class => 'control-label'
+          = text_field :form, :cancer_care_provider, :class => 'form-control'
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "BCEF Зона обслуживания"
+          %div{:class => 'row'}
+            %div{:class => 'col-md-3'}
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
+                  Сан - Франциско County
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
+                  Сан - Матео
+              %div{:class => 'radio'}
+                %label
+                  = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
+                  Санта -Клара
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "Активный груди Лечение рака (отметьте все , что подходит)"
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :surgery, :class => 'checkbox'
+              Хирургическое ток/до/в течение шести месяцев
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :chemo, :class => 'checkbox'
+              Химиотерапия ток/до/в течение шести месяцев
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :radiation, :class => 'checkbox'
+              Радиационная ток / до / в течение шести месяцев
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :late_stage, :class => 'checkbox'
+              Метастатического рака молочной железы/Stage IV
+
+        %p
+        %div{:class => 'form_group'}
+          = label_tag "BCEF на доходы физических лиц Требование $2000 или меньше в месяц"
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
+              да
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+              не
+          %div{:class => 'radio'}
+            %label
+              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+              неуверенный
+
+        %p
+        %div{:class => 'form_group'}
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :additional_info
+              Важно Дополнительная информация. Пожалуйста, свяжитесь со мной, прежде чем обращаться этот клиент.
+
+        %p
+        %div{:class => 'form_group'}
+          %div{:class => 'checkbox'}
+            %label
+              = check_box :form, :consent
+              Моя подпись указывает, что выше cliet дал устное или письменное согласие на BCEF связаться с ним / ней напрямую , чтобы завершить приложение BCEF в экстренной финансовой помощи.
+
+        %p
+        %div{:class => 'form_group'}
+          = submit_tag "Отправить впускного форму", :class => 'button'
