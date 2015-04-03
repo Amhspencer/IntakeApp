@@ -20,6 +20,7 @@ IntakeApp::Application.routes.draw do
   get "static_pages/disclaimer"
   get "static_pages/confirmation"
   get "static_pages/partnerdashboard"
+  get 'static_pages/notadmin'
 
   # Resouces - Including: new, show, edit etc ...
   resources :users
