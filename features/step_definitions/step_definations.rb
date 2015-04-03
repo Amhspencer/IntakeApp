@@ -2,21 +2,27 @@ Given /the following admins exist/ do |admins_table|
   admins_table.hashes.each do |admin|
     Admin.create admin
   end
-  #flunk "Unimplemented"
+end
+
+Given /I am logged in as an admin/ do
+  Admin.create!(:email => "andy@andy.com", :name => "Andy", :password => "andy123", :admin => "t")
+  visit("/login")
+  fill_in "session_email", :with => "andy@andy.com"
+  fill_in "session_password", :with =>"andy123"
+  click_button "Log in"
+  assert page.body =~ /Displaying Admin: Andy/
 end
 
 Given /the following partners exist/ do |partners_table|
   partners_table.hashes.each do |partner|
     Partner.create partner
   end
-  #flunk "Unimplemented"
 end
 
 Given /the following forms exist/ do |forms_table|
   forms_table.hashes.each do |form|
-    Form.create form
+    Form.create! form
   end
-  #flunk "Unimplemented"
 end
 
 When /I go to the "(.*)" page/ do |link|
@@ -38,6 +44,18 @@ end
 
 Then /I should see "(.*)"/ do |msg|
 	assert page.body =~ /#{msg}/
+end
+
+Then /I should first see "(.*)", then "(.*)"/ do |a, b|
+  one = page.body.index(a)
+  two = page.body.index(b)
+  assert((one and two and one < two), "Incorrect order")
+end
+
+Then /I should not see "(.*)" before "(.*)"/ do |a, b|
+  one = page.body.index(a)
+  two = page.body.index(b)
+  assert((one and two and one > two), "Incorrect order")
 end
 
 Then /I would be at "(.*)" page/ do |pg|

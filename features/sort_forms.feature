@@ -4,28 +4,36 @@ Feature:
   I want to sort them by date, site, county, and preferred language.
 
   Background:
-    Given I am logged in as an admin
-    And the following forms exist:
-# FORM | TABLE | DATA | TO | SORT |
-    And I am on the admin dashboard
+    Given the following forms exist:
+    | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
+    And I am logged in as an admin
+    And I should see "Bing"
+    And I should see "Processed Forms"
   
+  Scenario: I should be able to sort by the patient's last name
+    When I click the "Name" link
+    Then I should first see "Bing", then "Zee"
+    But I should not see "Zion" before "Alta Bates"
+
   Scenario: I should be able to sort by date submitted
-    When I follow "date"
-    Then I should see "Form1" before "Form2"
-    But I should not see "Form4" before "Form3"
+    When I click the "Date Submitted" link
+    Then I should first see "Bing", then "Zee"
+    But I should not see "Zion" before "Alta Bates"
 
   Scenario: I should be able to sort alphabetically by site
-    When I follow "site"
-    Then I should see "Form2" before "Form3"
-    But I should not see "Form1" before "Form4"
+    When I click the "Medical Facility" link
+    Then I should first see "Alta Bates", then "Zion"
+    But I should not see "English" before "Tagalog"
 
   Scenario: I should be able to sort by county
-    When I follow "county"
-    Then I should see "Form1" before "Form3"
-    But I should not see "Form2" before "Form4"
+    When I click the "County" link
+    Then I should first see "San Francisco", then "San Mateo"
+    But I should not see "Zee" before "Bing"
 
   Scenario: I should be able to sort by language
-    When I follow "preferred language"
-    Then I should see "Form2" before "Form1"
-    But I should not see "Form3" before "Form4"
+    When I click the "Preferred Language" link
+    Then I should first see "English", then "Tagalog"
+    But I should not see "Bing" before "Zee"
 
