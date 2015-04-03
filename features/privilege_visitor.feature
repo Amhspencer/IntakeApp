@@ -23,3 +23,7 @@ Scenario: As a visitor, when I go to the partners route i will be redirected to 
   When I go to the "/login" page
   And I go to the "/partners/1" page
   Then I should see "Log in"
+
+Scenario: As a visitor, when I go to the users route i will be redirected to Login.
+  When I go to the "/users" page
+  Then I should see "Log in"
