@@ -4,6 +4,7 @@ class AdminsController < ApplicationController
     authenticate_user
     id = params[:id]
     if !params[:sort] && session[:sort] then
+      flash.keep
       redirect_to :action => "show", :id => session[:user_id], :sort => session[:sort]
     end
     @admin = Admin.find(id)
