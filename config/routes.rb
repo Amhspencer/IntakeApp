@@ -16,6 +16,9 @@ IntakeApp::Application.routes.draw do
   # View Form as Admin
   get  'forms/admin/:id(.:format)' => 'forms#showToAdmin', :as => :showToAdmin_form
 
+  # Language selection
+  get 'forms/new_spanish' 
+
   # Static pages - Used to display additional information
   get "static_pages/disclaimer"
   get "static_pages/confirmation"
