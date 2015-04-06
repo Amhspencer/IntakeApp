@@ -1,6 +1,6 @@
 -#  This file is app/views/admins/show.html.haml
 
-=render 'static_pages/header'
+=render 'layouts/header'
 
 %h1{:class => 'text-center'} Displaying Admin: #{@admin.name}
 
@@ -54,3 +54,5 @@
 = button_to 'Create New Admin Account', new_admin_path, :method => :get
 
 = button_to 'Create New Partner Account', new_partner_path, :method => :get
+
+=render 'layouts/footer'

@@ -1,4 +1,4 @@
-=render 'static_pages/header'
+=render 'layouts/header'
 
 %h1.pagename #{Partner.find(session[:user_id]).name}
 
@@ -7,3 +7,5 @@
 Useful information here
 
 = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
+
+=render 'layouts/footer'
