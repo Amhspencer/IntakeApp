@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # show user's profile based on the ID, if not logged in the redirect to login
-  '''  
+   
   def show
     id = params[:id]
     @user = User.find(id)
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to partner_path id
     end
   end
-  '''
+  
   # when someone visits /users/ it will automatically redirect to login
   def index
   	redirect_to login_path
