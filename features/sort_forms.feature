@@ -1,5 +1,5 @@
 Feature:
-  As an admin
+  As an admin or staff
   So I can categorize the forms that have been submitted
   I want to sort them by date, site, county, and preferred language.
 
@@ -14,7 +14,8 @@ Feature:
   
   Scenario: I should be able to sort by the patient's last name
     When I click the "Name" link
-    Then I should first see "Bing", then "Zee"
+    Then I should first see "Processed Forms", then "Bing"
+    And I should first see "Bing", then "Zee"
     But I should not see "Zion" before "Alta Bates"
 
   Scenario: I should be able to sort by date submitted
@@ -36,4 +37,10 @@ Feature:
     When I click the "Preferred Language" link
     Then I should first see "English", then "Tagalog"
     But I should not see "Bing" before "Zee"
+
+  Scenario: I should be able to sort unprocessed forms the same way
+    When I run through the steps above
+    Then I should first see "Unprocessed Forms", then "FormX"
+    And I should first see "FormY", then "FormZ"
+    But I should not see "FormZ" before "FormY"
 
