@@ -15,45 +15,7 @@
         %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
         %th Complete Info
     %tbody
-
-%h2 Unprocessed Forms
-%table#unprocessed_forms
-  %thead
-    %tr
-      %th{:width => '160'}= link_to "Name", admin_path(:id => params[:id], :sort => "last_name")
-      %th{:width => '160'}= link_to "Date Submitted", admin_path(:id => params[:id], :sort => "date")
-      %th{:width => '160'}= link_to "Medical Facility", admin_path(:id => params[:id], :sort => "medical_facility")
-      %th{:width => '160'}= link_to "County", admin_path(:id => params[:id], :sort => "service_area")
-      %th{:width => '160'}= link_to "Preferred Language", admin_path(:id => params[:id], :sort => "preferred_language")
-
-  %tbody
-    - @unprocessedForms.each do |form|
-      %tr
-        %td= link_to "#{form.last_name}, #{form.first_name[0]}", showToAdmin_form_path(form)
-        %td= form.created_at.strftime("%m/%d/%y")
-        %td= form.medical_facility
-        %td= form.service_area
-        %td= form.preferred_language
-%p
-
-%h2 Processed Forms
-%table#processed_forms
-  %thead
-    %tr
-      %th{:width => '160'}= link_to "Name", admin_path(:id => params[:id], :sort => "last_name")
-      %th{:width => '160'}= link_to "Date Submitted", admin_path(:id => params[:id], :sort => "date")
-      %th{:width => '160'}= link_to "Medical Facility", admin_path(:id => params[:id], :sort => "medical_facility")
-      %th{:width => '160'}= link_to "County", admin_path(:id => params[:id], :sort => "service_area")
-      %th{:width => '160'}= link_to "Preferred Language", admin_path(:id => params[:id], :sort => "preferred_language")
-
-  %tbody
-    - @processedForms.each do |form|
-      %tr
-        %td= link_to "#{form.last_name}, #{form.first_name[0]}", showToAdmin_form_path(form)
-        %td= form.created_at.strftime("%m/%d/%y")
-        %td= form.medical_facility
-        %td= form.service_area
-        %td= form.preferred_language
+= render 'layouts/forms_table'
 
 %p
 = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get

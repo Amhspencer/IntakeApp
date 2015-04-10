@@ -3,14 +3,20 @@ class AdminsController < ApplicationController
   def show
     authenticate_user
     id = params[:id]
-    if !params[:sort] && session[:sort] then
+    unprocessed = (!params[:unproc_sort] && session[:unproc_sort])
+    processed = (!params[:proc_sort] && session[:proc_sort])
+    if unprocessed || processed then
       flash.keep
-      redirect_to :action => "show", :id => session[:user_id], :sort => session[:sort]
+      redirect_to :action => "show",
+                  :id => session[:user_id],
+                  :unproc_sort => (unprocessed ? session[:unproc_sort] : params[:unproc_sort]),
+                  :proc_sort => (processed ? session[:proc_sort] : params[:proc_sort])
     end
-    session[:sort] = params[:sort]
+    session[:unproc_sort] = params[:unproc_sort]
+    session[:proc_sort] = params[:proc_sort]
     @admin = Admin.find(id)
-    @unprocessedForms = Form.where(:processed => false)
-    @processedForms = Form.where(:processed => true).order(session[:sort]);
+    @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
+    @processedForms = Form.where(:processed => true).order(session[:proc_sort])
   end
 
 
