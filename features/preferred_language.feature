@@ -21,7 +21,7 @@ Feature: view from in different languages
   Then I would be at "disclaimer" page
   
   When I click the "English" button
-  Then I should see "This will hold the disclaimer"
+  Then I should see "Thank you for connecting with Breast Cancer Emergency Fund!"
 
   When I click the "Spanish" button
   Then I should see "Esto mantendrá la exención de responsabilidad"  
