@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     id = params[:id]
     @user = User.find(id)
-    if @user.admin
+    if (@user.type == "Admin")
       redirect_to admin_path id
     else
       redirect_to partner_path id

@@ -5,9 +5,9 @@ Feature: view from in different languages
 
   Background:
 	Given the following partners exist:
-    | email           | name  | password      | phone_number | work_email         | organization | admin |
-    | cody@cody.com   | Cody  | cody123       | 5103456543   | andy@workplace.com | Kaiser       | f     |
-    | daddy@daddy.com | Daddy | daddy123      | 5106554345   | dady@workplace.com | Alta Bates   | f     |
+    | email           | name  | password      | phone_number | work_email         | organization |
+    | cody@cody.com   | Cody  | cody123       | 5103456543   | andy@workplace.com | Kaiser       |
+    | daddy@daddy.com | Daddy | daddy123      | 5106554345   | dady@workplace.com | Alta Bates   |
 
 
   Scenario: After clicking on create new form, I can see different languages in "Disclaimer"

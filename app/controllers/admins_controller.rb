@@ -20,8 +20,8 @@ class AdminsController < ApplicationController
 
   def create
     authenticate_user
-    @admin = Admin.create!(params[:admin])
-    @admin.admin = 1
+    @admin = Admin.create!(params[:admin])  #What's the params here?
+    #@admin.admin = 1
     @admin.save!
     if @admin.save
       flash[:success] = "Admin created successfully!"
