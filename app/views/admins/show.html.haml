@@ -20,14 +20,21 @@
 %table#unprocessed_forms
   %thead
     %tr
-      %th Form ID
-      %th Date
+      %th{:width => '160'}= link_to "Name", admin_path(:id => params[:id], :sort => "last_name")
+      %th{:width => '160'}= link_to "Date Submitted", admin_path(:id => params[:id], :sort => "date")
+      %th{:width => '160'}= link_to "Medical Facility", admin_path(:id => params[:id], :sort => "medical_facility")
+      %th{:width => '160'}= link_to "County", admin_path(:id => params[:id], :sort => "service_area")
+      %th{:width => '160'}= link_to "Preferred Language", admin_path(:id => params[:id], :sort => "preferred_language")
 
   %tbody
     - @unprocessedForms.each do |form|
       %tr
-        %td= link_to "Form #{form.id}",  showToProcess_form_path(form)
+        %td= link_to "#{form.last_name}, #{form.first_name[0]}", showToAdmin_form_path(form)
         %td= form.created_at.strftime("%m/%d/%y")
+        %td= form.medical_facility
+        %td= form.service_area
+        %td= form.preferred_language
+%p
 
 %h2 Processed Forms
 %table#processed_forms
@@ -50,8 +57,10 @@
 
 %p
 = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
+%p
 
 = button_to 'Create New Admin Account', new_admin_path, :method => :get
+%p
 
 = button_to 'Create New Partner Account', new_partner_path, :method => :get
 
