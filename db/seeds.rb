@@ -23,7 +23,7 @@ admins.each do |admin|
 end
 
 staff.each do |staff|
-  Admin.create!(staff)
+  Staff.create!(staff)
 end
 
 partners.each do |partner|
