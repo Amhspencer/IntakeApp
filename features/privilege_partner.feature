@@ -8,14 +8,14 @@ Feature: Partner can only create new form, cannot execute any function of admin.
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | admin |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | t     |
+      | email           | name  | password      | phone_number | work_email         |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | admin |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | f     |
+      | email           | name  | password      | phone_number | work_email         | organization|
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | myorg|
 
-Scenario: As a partner, i can view my dashboard.
+Scenario: As a partner, I can view my dashboard.
   When I go to the "/login" page
   And I fill in "session_email" with "bobby@bobby.com"
   And I fill in "session_password" with "bobby123"

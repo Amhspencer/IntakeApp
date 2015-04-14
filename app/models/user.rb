@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :phone_number, :work_email, :admin
+  attr_accessible :email, :name, :password, :phone_number, :work_email
 
   validates :name, presence: true, length: { maximum: 50 }    # validate the name field
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end 
+
+  # Send reset email
+  def send_password_reset_email
+        UserMailer.password_reset(self).deliver
+  end
 end

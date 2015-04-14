@@ -7,12 +7,12 @@ Feature: Visitor - or unloggedin user - cannot be able to browse or execute any 
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | admin |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | t     |
+      | email           | name  | password      | phone_number | work_email         |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | admin |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | f     |
+      | email           | name  | password      | phone_number | work_email         |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
 
 Scenario: As a visitor, when I go to the admins route i will be redirected to Login.
   When I go to the "/login" page
