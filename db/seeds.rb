@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 admins = [{:name => 'Savannah Dunlap', :email => 'savannah@gmail.com', :work_email => 'savannah@bcef.org', :password => 'killCancer', :phone_number => "1235673912"},
-		{:name => 'Andy', :email => 'andy@andy.com', :work_email => 'andy@bcef.org', :password => 'andy123', :phone_number => "1235673912"}
+		{:name => 'Andy', :email => 'andy@andy.com', :work_email => 'andy@bcef.org', :password => 'andy123', :phone_number => "1235673912"},
+		{:name => 'BCEFTestEmail', :email => 'bceftestemail@gmail.com', :work_email => 'andy@bcef.org', :password => '123456', :phone_number => "1235673912"}
 		]
 
 staff = [{:name => 'Staff Person', :email => 'staff@gmail.com', :work_email => 'staff@bcef.org', :password => '123456', :phone_number => "1235673912"},
