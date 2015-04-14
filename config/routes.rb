@@ -1,5 +1,8 @@
 IntakeApp::Application.routes.draw do
 
+  get "password_resets/new"
+  get "password_resets/edit"
+
   # root - index of : bcef.herokuapp.com
   root to:  'sessions#new'
 
@@ -20,13 +23,14 @@ IntakeApp::Application.routes.draw do
   get "static_pages/disclaimer"
   get "static_pages/confirmation"
   get "static_pages/partnerdashboard"
-  get 'static_pages/notadmin'
+  get "static_pages/notadmin"
 
   # Resouces - Including: new, show, edit etc ...
   resources :users
   resources :partners
   resources :admins
   resources :forms
+  resources :password_resets
 
   # Shortcut - Rather than long action routes
 #get "partner_dashboard" => "static_pages#partnerdashboard"

@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end 
+
+  # Send reset email
+  def send_password_reset_email
+        UserMailer.password_reset(self).deliver
+  end
 end
