@@ -5,8 +5,13 @@ class UsersController < ApplicationController
     id = params[:id]
     @user = User.find(id)
     if (@user.type == "Admin")
+      puts "Admin  AAAAA"
       redirect_to admin_path id
-    else
+    else if (@user.type == "Staff")
+      puts ("Staff SSSSSSS")
+      redirect_to staff_path id
+    else if (@user.type == "Partner")
+      puts "Partner PPPPPP"
       redirect_to partner_path id
     end
   end

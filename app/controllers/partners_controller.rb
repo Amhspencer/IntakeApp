@@ -1,8 +1,9 @@
 class PartnersController < ApplicationController
-  def new
-    authenticate_user
-    #@partner = Partner.new
-  end
+
+ # def new
+ #    authenticate_user
+ #    #@partner = Partner.new
+ #  end
 
   def create
     authenticate_user

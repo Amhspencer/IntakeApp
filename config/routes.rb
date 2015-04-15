@@ -26,9 +26,10 @@ IntakeApp::Application.routes.draw do
   get "static_pages/notadmin"
 
   # Resouces - Including: new, show, edit etc ...
-  resources :users
+  #resources :users  #I don't think we need this
   resources :partners
   resources :admins
+  resources :staff
   resources :forms
   resources :password_resets
 

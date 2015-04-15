@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
         redirect_to partner_path @user.id
       elsif session[:user_role] == :admin
         redirect_to admin_path @user.id
+      elsif session[:user_role] == :staff
+        redirect_to staff_path @user.id
       end
     else
       flash.now[:danger] = 'Invalid email/password combination'
