@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # show user's profile based on the ID, if not logged in the redirect to login
    
+  before_filter :authenticate_user
+
   def show
     id = params[:id]
     @user = User.find(id)
@@ -35,20 +37,9 @@ class UsersController < ApplicationController
         redirect_to partner_path session[:user_id] and return
       elsif session[:user_role] == :staff && params[:id].to_i != session[:user_id]
         redirect_to staff_path session[:user_id] and return
-      else
-        return true
       end
     end
   end
 
-  # def authenticate_user
-  #   if !session[:user_id]
-  #     redirect_to login_path
-  #   elsif session[:user_role] == :partner
-  #     redirect_to partner_path session[:user_id]
-  #   elsif session[:user_role] == :staff
-  #     redirect_to staff_path session[:user_id]
-  #   end
-  # end
   
 end
