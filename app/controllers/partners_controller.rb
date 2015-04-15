@@ -1,4 +1,4 @@
-class PartnersController < ApplicationController
+class PartnersController < UsersController
 
  # def new
  #    authenticate_user
@@ -21,9 +21,9 @@ class PartnersController < ApplicationController
   end
 
 # call this method first to make sure only admin can perform the action
-  def authenticate_user
-    if !session[:user_id]
-      redirect_to login_path
-    end
-  end  
+  # def authenticate_user
+  #   if !session[:user_id]
+  #     redirect_to login_path
+  #   end
+  # end  
 end
