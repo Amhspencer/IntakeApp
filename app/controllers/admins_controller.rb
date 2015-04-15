@@ -37,12 +37,14 @@ class AdminsController < ApplicationController
     end
   end
 
-  # call this method first to make sure only admin can perform the action
+  call this method first to make sure only admin can perform the action
   def authenticate_user
     if !session[:user_id]
       redirect_to login_path
     elsif session[:user_role] == :partner
       redirect_to static_pages_notadmin_path
+    elsif session[:user_role] == :staff
+      redirect_to staff_path session[:user_id]
     end
   end
 

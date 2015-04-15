@@ -24,4 +24,15 @@ class UsersController < ApplicationController
 
   def create
   end
+
+  # def authenticate_user
+  #   if !session[:user_id]
+  #     redirect_to login_path
+  #   elsif session[:user_role] == :partner
+  #     redirect_to partner_path session[:user_id]
+  #   elsif session[:user_role] == :staff
+  #     redirect_to staff_path session[:user_id]
+  #   end
+  # end
+  
 end
