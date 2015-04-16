@@ -2,12 +2,15 @@
 
 =render 'layouts/header'
 
-%h1.pagename #{Partner.find(session[:user_id]).name}
+%div{ :class => "container"}
+  %h2 
+    %span{ :class => "glyphicon glyphicon-user"}
+    #{Partner.find(session[:user_id]).name}
+    %small User Dashboard for #{User.find(session[:user_id]).type}
 
-%p User dashboard:
+  %p Avaliable functions:
 
-
-= button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
+  = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-primary"
 
 -#
   %table#clients

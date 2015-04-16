@@ -3,8 +3,13 @@
 %div{:class => 'container'}
   %div{:class => 'row'}
     %div{:class => 'col-md-9'}
-      %h2 Previous Forms
-      %table#unprocessed_forms
+      %h3 
+        %span{ :class => "glyphicon glyphicon-th-list"}
+        Previous Forms 
+        %small 
+          List of submitted forms
+      <br/> 
+      %table#unprocessed_forms{:class => 'table table-striped'}
         %thead
           %tr
             %th{:width => '160'}= link_to "Name", admin_path(:id => params[:id], :unproc_sort => "last_name")
@@ -12,6 +17,7 @@
             %th{:width => '160'}= link_to "Medical Facility", admin_path(:id => params[:id], :unproc_sort => "medical_facility")
             %th{:width => '160'}= link_to "County", admin_path(:id => params[:id], :unproc_sort => "service_area")
             %th{:width => '160'}= link_to "Preferred Language", admin_path(:id => params[:id], :unproc_sort => "preferred_language")
+        
 
         %tbody
           - @all_forms.each do |form|
