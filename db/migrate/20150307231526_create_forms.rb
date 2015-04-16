@@ -18,6 +18,7 @@ class CreateForms < ActiveRecord::Migration
       t.boolean :consent
       t.string :signature
       t.datetime :date
+      t.integer :user_id
 
       t.timestamps
     end

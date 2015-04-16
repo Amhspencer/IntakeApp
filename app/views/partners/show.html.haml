@@ -6,8 +6,20 @@
 
 %p User dashboard:
 
-Useful information here
 
 = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
+
+-#
+  %table#clients
+    %thead
+      %tr
+        %th{:class => (session[:sortHighlight]=='name' ? "hilite" : nil)}= link_to "Client Name", "My Name", :id => "name_header"
+        %th{:class => (session[:sortHighlight]=='area' ? "hilite" : nil)}= link_to "Service Area", "My Area", :id => "area_header"
+        %th{:class => (session[:sortHighlight]=='medical_facility' ? "hilite" : nil)}= link_to "Medical Facility", "My Medical Facility", :id => "medical_facility_header"
+        %th{:class => (session[:sortHighlight]=='language' ? "hilite" : nil)}= link_to "Language", "My Language", :id => "language_header"
+        %th{:class => (session[:sortHighlight]=='date_completed' ? "hilite" : nil)}= link_to "Date Completed", "10/12/1995", :id => "date_completed"
+        %th Complete Info
+    %tbody
+= render 'layouts/forms_table_partner'
 
 =render 'layouts/footer'

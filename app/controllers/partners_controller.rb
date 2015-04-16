@@ -14,6 +14,10 @@ class PartnersController < UsersController
   
   def show
     #authenticate_user
+    id = params[:id]
+    @partner = Partner.find(id)
+    @all_forms = @partner.forms
+
   end
 
 end
