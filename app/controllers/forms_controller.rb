@@ -13,6 +13,7 @@ class FormsController < ApplicationController
 
   def create
     @form = Form.create!(params[:form])
+    @form.user_id = session[:user_id]
     @form.processed = false
     @form.save!
     # Redirect to the end page, for now redirects to a show that form
