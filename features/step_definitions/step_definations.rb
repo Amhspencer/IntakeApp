@@ -5,7 +5,7 @@ Given /the following admins exist/ do |admins_table|
 end
 
 Given /I am logged in as an admin/ do
-  Admin.create!(:email => "andy@andy.com", :name => "Andy", :password => "andy123", :admin => "t")
+  Admin.create!(:email => "andy@andy.com", :name => "Andy", :password => "andy123")
   visit("/login")
   fill_in "session_email", :with => "andy@andy.com"
   fill_in "session_password", :with =>"andy123"
@@ -74,6 +74,12 @@ end
 
 When /I click the "(.*)" link/ do |lk|
 	click_link lk
+end
+
+When /I click the link "(.*)" called "(.*)"/ do |id, txt|
+  within("##{id}") do
+    click_link txt
+  end
 end
 
 And /I select option "(.*)" from "(.*)"/ do |option, form_id|

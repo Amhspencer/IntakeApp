@@ -5,11 +5,11 @@
       %table#unprocessed_forms
         %thead
           %tr
-            %th{:width => '160'}= link_to "Name", user_path(:id => params[:id], :unproc_sort => "last_name")
-            %th{:width => '160'}= link_to "Date Submitted", user_path(:id => params[:id], :unproc_sort => "date")
-            %th{:width => '160'}= link_to "Medical Facility", user_path(:id => params[:id], :unproc_sort => "medical_facility")
-            %th{:width => '160'}= link_to "County", user_path(:id => params[:id], :unproc_sort => "service_area")
-            %th{:width => '160'}= link_to "Preferred Language", user_path(:id => params[:id], :unproc_sort => "preferred_language")
+            %th{:width => '160', :id => 'unproc_name'}= link_to "Name", admin_path(:id => params[:id], :unproc_sort => "last_name")
+            %th{:width => '160', :id => 'unproc_date'}= link_to "Date Submitted", admin_path(:id => params[:id], :unproc_sort => "date")
+            %th{:width => '160', :id => 'unproc_facility'}= link_to "Medical Facility", admin_path(:id => params[:id], :unproc_sort => "medical_facility")
+            %th{:width => '160', :id => 'unproc_county'}= link_to "County", admin_path(:id => params[:id], :unproc_sort => "service_area")
+            %th{:width => '160', :id => 'unproc_language'}= link_to "Preferred Language", admin_path(:id => params[:id], :unproc_sort => "preferred_language")
 
         %tbody
           - @unprocessedForms.each do |form|
@@ -25,11 +25,11 @@
       %table#processed_forms
         %thead
           %tr
-            %th{:width => '160'}= link_to "Name", user_path(:id => params[:id], :proc_sort => "last_name")
-            %th{:width => '160'}= link_to "Date Submitted", user_path(:id => params[:id], :proc_sort => "date")
-            %th{:width => '160'}= link_to "Medical Facility", user_path(:id => params[:id], :proc_sort => "medical_facility")
-            %th{:width => '160'}= link_to "County", user_path(:id => params[:id], :proc_sort => "service_area")
-            %th{:width => '160'}= link_to "Preferred Language", user_path(:id => params[:id], :proc_sort => "preferred_language")
+            %th{:width => '160', :id => 'proc_name'}= link_to "Name", admin_path(:id => params[:id], :proc_sort => "last_name")
+            %th{:width => '160', :id => 'proc_date'}= link_to "Date Submitted", admin_path(:id => params[:id], :proc_sort => "date")
+            %th{:width => '160', :id => 'proc_facility'}= link_to "Medical Facility", admin_path(:id => params[:id], :proc_sort => "medical_facility")
+            %th{:width => '160', :id => 'proc_county'}= link_to "County", admin_path(:id => params[:id], :proc_sort => "service_area")
+            %th{:width => '160', :id => 'proc_language'}= link_to "Preferred Language", admin_path(:id => params[:id], :proc_sort => "preferred_language")
 
         %tbody
           - @processedForms.each do |form|
