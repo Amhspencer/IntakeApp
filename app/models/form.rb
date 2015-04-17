@@ -4,7 +4,7 @@ class Form < ActiveRecord::Base
 
   def process
       self.processed = true
-      #self.save!
+      self.save!
   end
 
 

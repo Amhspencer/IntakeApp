@@ -32,15 +32,15 @@ class FormsController < ApplicationController
     @form = Form.find(params[:id])
   end
 
-
+  #Controller action for bring up page with the mark as processed button
   def showToProcess
     @form = Form.find(params[:id])
   end
 
+
   def processForm
     @form = Form.find(params[:id])
-    @form.processed = true
-    @form.save!
+    @form.process
     redirect_to user_path(session[:user_id])
   end
 

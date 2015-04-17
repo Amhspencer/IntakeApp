@@ -30,4 +30,17 @@ module SessionsHelper
     !current_user.nil?
   end
 
+
+  def is_admin_session?
+    return session[:user_role] == :admin
+  end
+
+  def is_partner_session?
+    return session[:user_role] == :partner
+  end
+
+  def is_staff_session?
+    return session[:user_role] == :staff
+  end
+
 end
