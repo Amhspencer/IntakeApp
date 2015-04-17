@@ -42,3 +42,6 @@ Scenario: After I login as an admin, I can create a new Client (Intake) Form
   When I click the "Continue" link
   Then I should see "confirmation"
   And I should see "You will recieve an email confirming your form submission and your form will be processed within 24 hours"
+
+  When I click the "Back To Dashboard" link
+  Then I should see "Smith"
