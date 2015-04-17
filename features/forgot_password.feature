@@ -1,14 +1,26 @@
 Feature: Regenerate forgotten password
-  As a user
-  So that I can continue working if I forget my password
-  I want to create a new password
+  As an user of BCCEF (admin/staff/partner)
+  If I forget my current password
+  I can request to have the new password sent to my email
 
   Background:
-    Given I am on the login page
+  Given the following admins exist:
+      | email           | name  | password      | phone_number | work_email         |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
 
   Scenario:
-    When I enter my email
-    And I click "Forgot password?"
-    Then I should see a page telling me an email has been sent
-    And I cannot login with my old password
+    When I go to the "/login" page
+    And I fill in "session_email" with "andy@andy.com"
+    And I fill in "session_password" with "andy12356"
+    And I click the "Log in" button
+    Then I should see "Invalid email/password combination"
 
+    When I click the "Forgot Password?" link    
+    And I fill in "password_reset_email" with "andy123@andy.com"
+    And I click the "Submit" button
+    Then I should see "Email address does not exist"
+
+    When I fill in "password_reset_email" with "andy@andy.com"
+    And I click the "Submit" button
+    Then I should see "You will receive an email with password soon"    

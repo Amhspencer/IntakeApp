@@ -19,6 +19,12 @@ Given /the following partners exist/ do |partners_table|
   end
 end
 
+Given /the following staffs exist/ do |staffs_table|
+  staffs_table.hashes.each do |staff|
+    Staff.create staff
+  end
+end
+
 Given /the following forms exist/ do |forms_table|
   forms_table.hashes.each do |form|
     Form.create! form

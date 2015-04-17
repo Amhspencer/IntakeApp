@@ -10,7 +10,7 @@ Background:
       | email           | name  | password      | phone_number | work_email         |
       | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
 
-  Given the following admins exist:
+  Given the following partners exist:
       | email           | name  | password      | phone_number | work_email         |
       | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
 
@@ -22,10 +22,11 @@ Scenario: As an admin, i can view my dashboard.
   Then I should see "Andy"
   And I should see "Admin"
 
-Scenario: As an admin, i can view other partners' dashboards.
+Scenario: As an admin, i cannot view other partners' dashboards.
   When I go to the "/login" page
   And I fill in "session_email" with "andy@andy.com"
   And I fill in "session_password" with "andy123"
   And I click the "Log in" button
-  And I go to the "/partners/1" page
-  Then I should see "User dashboard"
+  And I go to the "/partners/2" page
+  Then I should see "Andy"
+  And I should see "Admin"

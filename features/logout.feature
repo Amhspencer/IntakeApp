@@ -29,7 +29,7 @@ Scenario: As a partner, I can logout from partner's dashboard.
   And I fill in "session_password" with "bobby123"
   And I click the "Log in" button
   Then I should see "Bobby"
-  And I should see "User dashboard"
+  And I should see "Partner"
   When I click the "Log out" link
   Then I should see "Log in"
 

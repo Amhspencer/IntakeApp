@@ -15,7 +15,7 @@ Feature: view from in different languages
   And I fill in "session_email" with "cody@cody.com"
   And I fill in "session_password" with "cody123"
   And I click the "Log in" button
-  Then I should see "User dashboard"
+  Then I should see "Partner"
 
   When I click the "New Client Form" button
   Then I would be at "disclaimer" page
