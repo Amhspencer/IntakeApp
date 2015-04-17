@@ -41,11 +41,11 @@ class UsersController < ApplicationController
 
   def redirect_to_session_id
     if params_and_session_inconsistent
-      if is_admin_session
+      if is_admin_session?
         redirect_to admin_path session[:user_id] and return
-      elsif is_partner_session
+      elsif is_partner_session?
         redirect_to partner_path session[:user_id] and return
-      elsif is_staff_session
+      elsif is_staff_session?
         redirect_to staff_path session[:user_id] and return
       end
     end
@@ -55,18 +55,6 @@ class UsersController < ApplicationController
     return params[:id] && params[:id].to_i != session[:user_id]
   end
   
-  def is_admin_session
-    return session[:user_role] == :admin
-  end
-
-  def is_partner_session
-    return session[:user_role] == :partner
-  end
-
-  def is_staff_session
-    return session[:user_role] == :staff
-  end
-
 
 ###
 #Sorting Code
@@ -75,25 +63,27 @@ class UsersController < ApplicationController
 #Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
 #appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
   def form_sorting_for_show
-    sorting_redirect
+    if missing_params then
+      redirect_when_missing_params
+    end
     session[:unproc_sort] = params[:unproc_sort]
     session[:proc_sort] = params[:proc_sort]
     @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
     @processedForms = Form.where(:processed => true).order(session[:proc_sort])
   end
 
-  #Dante, please help me (Michael) re-name this method.  
-  #I don't have a clear understanding about what it's doing
-  def sorting_redirect 
-    unprocessed = (!params[:unproc_sort] && session[:unproc_sort]) #not params, but is a session
-    processed = (!params[:proc_sort] && session[:proc_sort])
-    if unprocessed || processed then
+  def redirect_when_missing_params
       flash.keep
       redirect_to :action => "show",
                   :id => session[:user_id],
-                  :unproc_sort => (unprocessed ? session[:unproc_sort] : params[:unproc_sort]),
-                  :proc_sort => (processed ? session[:proc_sort] : params[:proc_sort])
-    end
+                  :unproc_sort => (params[:unproc_sort] ? params[:unproc_sort] : session[:unproc_sort]),
+                  :proc_sort => (params[:proc_sort] ? params[:proc_sort] : session[:proc_sort])
+  end
+
+  def missing_params
+    unprocessed = (!params[:unproc_sort] && session[:unproc_sort])
+    processed = (!params[:proc_sort] && session[:proc_sort])
+    return unprocessed || processed
   end
 
 end
