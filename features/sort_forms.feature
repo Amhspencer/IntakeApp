@@ -15,7 +15,7 @@ Feature:
     And I should see "Processed Forms"
   
   Scenario: I should be able to sort by the patient's last name
-    When I click the link "proc_name"
+    When I click the link "#proc_name"
     Then I should first see "Processed Forms", then "Bing"
     And I should first see "Bing", then "Zee"
     But I should not see "Zion" before "Alta Bates"
