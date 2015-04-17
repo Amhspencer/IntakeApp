@@ -41,11 +41,11 @@ class UsersController < ApplicationController
 
   def redirect_to_session_id
     if params_and_session_inconsistent
-      if is_admin_session
+      if is_admin_session?
         redirect_to admin_path session[:user_id] and return
-      elsif is_partner_session
+      elsif is_partner_session?
         redirect_to partner_path session[:user_id] and return
-      elsif is_staff_session
+      elsif is_staff_session?
         redirect_to staff_path session[:user_id] and return
       end
     end
@@ -55,18 +55,6 @@ class UsersController < ApplicationController
     return params[:id] && params[:id].to_i != session[:user_id]
   end
   
-  def is_admin_session
-    return session[:user_role] == :admin
-  end
-
-  def is_partner_session
-    return session[:user_role] == :partner
-  end
-
-  def is_staff_session
-    return session[:user_role] == :staff
-  end
-
 
 ###
 #Sorting Code
