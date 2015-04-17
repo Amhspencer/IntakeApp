@@ -12,8 +12,8 @@ class AdminsController < UsersController
     if @admin.save
       flash[:success] = "Admin created successfully!"
       redirect_to admin_path(session[:user_id])
-    else
-      render 'new'
+    # else
+    #   render 'new'
     end
   end
 

@@ -27,7 +27,8 @@ class FormsController < ApplicationController
   def confirmation
   end
   
-  def showToAdmin
+  #Controller action for bringing up viewing a form for a user
+  def showToUser
     @form = Form.find(params[:id])
   end
 

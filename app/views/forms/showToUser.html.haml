@@ -1,0 +1,4 @@
+.content
+  = render partial: "form"
+
+  = button_to 'Back to Dashboard', user_path(session[:user_id]), :method => :get
