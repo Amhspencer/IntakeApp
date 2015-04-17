@@ -13,8 +13,8 @@ class StaffController < UsersController
     if @staff.save
       flash[:success] = "Staff created successfully!"
       redirect_to admin_path(session[:user_id])
-    else
-      render 'new'
+    #else
+    #  render 'new'
     end
   end
 
