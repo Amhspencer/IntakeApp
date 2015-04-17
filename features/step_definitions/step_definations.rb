@@ -76,9 +76,10 @@ When /I click the "(.*)" link/ do |lk|
 	click_link lk
 end
 
-When /I click the link "(.*)"/ do |id|
-#page.find("##{id}").click
-  click_on id
+When /I click the link "(.*)" called "(.*)"/ do |id, txt|
+  within("##{id}") do
+    click_link txt
+  end
 end
 
 And /I select option "(.*)" from "(.*)"/ do |option, form_id|
