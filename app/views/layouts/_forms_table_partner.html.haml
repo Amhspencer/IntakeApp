@@ -9,14 +9,14 @@
         %small 
           List of submitted forms
       <br/> 
-      %table#unprocessed_forms{:class => 'table table-striped'}
+      %table#all_forms{:class => 'table table-striped'}
         %thead
           %tr
-            %th{:width => '160'}= link_to "Name", admin_path(:id => params[:id], :unproc_sort => "last_name")
-            %th{:width => '160'}= link_to "Date Submitted", admin_path(:id => params[:id], :unproc_sort => "date")
-            %th{:width => '160'}= link_to "Medical Facility", admin_path(:id => params[:id], :unproc_sort => "medical_facility")
-            %th{:width => '160'}= link_to "County", admin_path(:id => params[:id], :unproc_sort => "service_area")
-            %th{:width => '160'}= link_to "Preferred Language", admin_path(:id => params[:id], :unproc_sort => "preferred_language")
+            %th{:width => '160'}= link_to "Name", partner_path(:id => params[:id], :partner_sort => "last_name")
+            %th{:width => '160'}= link_to "Date Submitted", partner_path(:id => params[:id], :partner_sort => "date")
+            %th{:width => '160'}= link_to "Medical Facility", partner_path(:id => params[:id], :partner_sort => "medical_facility")
+            %th{:width => '160'}= link_to "County", partner_path(:id => params[:id], :partner_sort => "service_area")
+            %th{:width => '160'}= link_to "Preferred Language", partner_path(:id => params[:id], :partner_sort => "preferred_language")
         
 
         %tbody
