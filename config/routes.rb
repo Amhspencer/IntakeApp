@@ -17,7 +17,7 @@ IntakeApp::Application.routes.draw do
   post 'forms/process/:id(.:format)' => 'forms#processForm', :as => :process_form
   
   # View Form as Admin
-  get  'forms/admin/:id(.:format)' => 'forms#showToAdmin', :as => :showToAdmin_form
+  get  'forms/user/:id(.:format)' => 'forms#showToUser', :as => :showToUser_form
 
   # Static pages - Used to display additional information
   get "static_pages/disclaimer"

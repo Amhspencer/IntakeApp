@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     id = params[:id]
     @user = User.find(id)
     if (@user.type == "Admin")
-      redirect_to admin_path id
+      redirect_to admin_path params
     elsif (@user.type == "Staff")
-      redirect_to staff_path id
+      redirect_to staff_path params
     else (@user.type == "Partner")
-      redirect_to partner_path id
+      redirect_to partner_path params
     end
   end
   
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     @processedForms = Form.where(:processed => true).order(session[:proc_sort])
   end
 
-  #Dante, please help me (Michael) rename this method.  
+  #Dante, please help me (Michael) re-name this method.  
   #I don't have a clear understanding about what it's doing
   def sorting_redirect 
     unprocessed = (!params[:unproc_sort] && session[:unproc_sort]) #not params, but is a session
