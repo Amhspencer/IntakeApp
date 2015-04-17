@@ -3,7 +3,7 @@ module SessionsHelper
   def log_in(user)
 
     session[:user_id] = user.id
-    if user.type == "Admin" #user.organization.nil? || user.organization.blank?
+    if user.type == "Admin"
       session[:user_role] = :admin
     elsif user.type == "Partner"
       session[:user_role] = :partner
