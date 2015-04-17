@@ -6,11 +6,20 @@ describe User do
     @user = User.new
     @user.password = "secretpassword"
     @user.name = "Bobby"
+    @user.active = true
   end
 
-  it "correctly initializes a name and password" do
-    @user.name.should be_an_instance_of String
-    @user.password.should be_an_instance_of String
+  it 'should successfully deactivate accounts' do
+    expect(@user.active).to eq(true)
+    @user.deactivate
+    expect(@user.active).to eq(false)
+  end
+
+  it 'should successfully reactivate accounts' do
+  	@user.active = false
+  	expect(@user.active).to eq(false)
+  	@user.reactivate
+  	expect(@user.active).to eq(true)
   end
 
 end

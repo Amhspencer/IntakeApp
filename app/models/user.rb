@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :phone_number, :work_email
+  attr_accessible :email, :name, :password, :phone_number, :work_email, :active
   has_many :forms
 
   validates :name, presence: true, length: { maximum: 50 }    # validate the name field
@@ -19,5 +19,13 @@ class User < ActiveRecord::Base
   # Send reset email
   def send_password_reset_email
         UserMailer.password_reset(self).deliver
+  end
+
+  def deactivate
+    self.active = false
+  end
+
+  def reactivate
+    self.active = true
   end
 end
