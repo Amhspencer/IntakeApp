@@ -27,6 +27,10 @@ class UsersController < ApplicationController
   def create
   end
 
+
+###
+#Authenticate Code
+###
   def authenticate_user
     if !session[:user_id]
       redirect_to login_path
@@ -37,11 +41,11 @@ class UsersController < ApplicationController
 
   def redirect_to_session_id
     if params_and_session_inconsistent
-      if session[:user_role] == :admin  
+      if is_admin_session
         redirect_to admin_path session[:user_id] and return
-      elsif session[:user_role] == :partner
+      elsif is_partner_session
         redirect_to partner_path session[:user_id] and return
-      elsif session[:user_role] == :staff
+      elsif is_staff_session
         redirect_to staff_path session[:user_id] and return
       end
     end
@@ -51,6 +55,23 @@ class UsersController < ApplicationController
     return params[:id] && params[:id].to_i != session[:user_id]
   end
   
+  def is_admin_session
+    return session[:user_role] == :admin
+  end
+
+  def is_partner_session
+    return session[:user_role] == :partner
+  end
+
+  def is_staff_session
+    return session[:user_role] == :staff
+  end
+
+
+###
+#Sorting Code
+###
+
 #Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
 #appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
   def form_sorting_for_show
