@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     id = params[:id]
     @user = User.find(id)
     if (@user.type == "Admin")
-      redirect_to admin_path id
+      redirect_to admin_path params
     elsif (@user.type == "Staff")
-      redirect_to staff_path id
+      redirect_to staff_path params
     else (@user.type == "Partner")
-      redirect_to partner_path id
+      redirect_to partner_path params
     end
   end
   
@@ -27,19 +27,73 @@ class UsersController < ApplicationController
   def create
   end
 
+
+###
+#Authenticate Code
+###
   def authenticate_user
     if !session[:user_id]
       redirect_to login_path
     else
-      if session[:user_role] == :admin  && params[:id].to_i != session[:user_id]
+      redirect_to_session_id
+    end
+  end
+
+  def redirect_to_session_id
+    if params_and_session_inconsistent
+      if is_admin_session
         redirect_to admin_path session[:user_id] and return
-      elsif session[:user_role] == :partner && params[:id].to_i != session[:user_id]
+      elsif is_partner_session
         redirect_to partner_path session[:user_id] and return
-      elsif session[:user_role] == :staff && params[:id].to_i != session[:user_id]
+      elsif is_staff_session
         redirect_to staff_path session[:user_id] and return
       end
     end
   end
 
+  def params_and_session_inconsistent
+    return params[:id] && params[:id].to_i != session[:user_id]
+  end
   
+  def is_admin_session
+    return session[:user_role] == :admin
+  end
+
+  def is_partner_session
+    return session[:user_role] == :partner
+  end
+
+  def is_staff_session
+    return session[:user_role] == :staff
+  end
+
+
+###
+#Sorting Code
+###
+
+#Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
+#appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
+  def form_sorting_for_show
+    sorting_redirect
+    session[:unproc_sort] = params[:unproc_sort]
+    session[:proc_sort] = params[:proc_sort]
+    @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
+    @processedForms = Form.where(:processed => true).order(session[:proc_sort])
+  end
+
+  #Dante, please help me (Michael) re-name this method.  
+  #I don't have a clear understanding about what it's doing
+  def sorting_redirect 
+    unprocessed = (!params[:unproc_sort] && session[:unproc_sort]) #not params, but is a session
+    processed = (!params[:proc_sort] && session[:proc_sort])
+    if unprocessed || processed then
+      flash.keep
+      redirect_to :action => "show",
+                  :id => session[:user_id],
+                  :unproc_sort => (unprocessed ? session[:unproc_sort] : params[:unproc_sort]),
+                  :proc_sort => (processed ? session[:proc_sort] : params[:proc_sort])
+    end
+  end
+
 end

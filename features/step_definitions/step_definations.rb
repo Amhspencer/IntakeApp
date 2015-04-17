@@ -19,6 +19,12 @@ Given /the following partners exist/ do |partners_table|
   end
 end
 
+Given /the following staffs exist/ do |staffs_table|
+  staffs_table.hashes.each do |staff|
+    Staff.create staff
+  end
+end
+
 Given /the following forms exist/ do |forms_table|
   forms_table.hashes.each do |form|
     Form.create! form
@@ -46,6 +52,10 @@ Then /I should see "(.*)"/ do |msg|
 	assert page.body =~ /#{msg}/
 end
 
+Then /I should not see "(.*)" anywhere/ do |msg|
+  assert !(page.body =~ /#{msg}/)
+end
+
 Then /I should first see "(.*)", then "(.*)"/ do |a, b|
   one = page.body.index(a)
   two = page.body.index(b)
@@ -67,7 +77,8 @@ When /I click the "(.*)" link/ do |lk|
 end
 
 When /I click the link "(.*)"/ do |id|
-  page.find("##{id}").click
+#page.find("##{id}").click
+  click_on id
 end
 
 And /I select option "(.*)" from "(.*)"/ do |option, form_id|

@@ -7,9 +7,9 @@ class StaticPagesController < ApplicationController
   	authenticate_user
   end
 
-  def partnerdashboard
-  	authenticate_user
-  end
+  #def partnerdashboard
+  # 	authenticate_user
+  #end
 
   def notadmin
   end
