@@ -41,7 +41,7 @@ Scenario: After I login as an admin, and I process 1 form, there will be 1 proce
   And there will be "1" forms in "processed_forms" table
   And there will be "1" forms in "unprocessed_forms" table
 
-Scenario: After I login as an admin, and I process 2 forms out of 2, there will be 2 processed forms and no unprocessed form
+Scenario: After I login as an admin, and I process 2 forms out of 2 unprocessed forms, there will be 2 processed forms and no unprocessed form
   When I go to the "/login" page
   And I fill in "session_email" with "andy@andy.com"
   And I fill in "session_password" with "andy123"
