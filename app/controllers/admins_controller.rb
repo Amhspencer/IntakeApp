@@ -17,6 +17,13 @@ class AdminsController < UsersController
     end
   end
 
+  def deactivate
+    if params[:deactivate] then
+      User.find(params[:deactivate]).deactivate
+    end
+    @active_users = User.find_by_active(true)
+    @inactive_users = User.find_by_active(false)
+  end
 
 end
 

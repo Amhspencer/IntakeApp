@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150410002628) do
+ActiveRecord::Schema.define(:version => 20150417224807) do
 
   create_table "forms", :force => true do |t|
     t.string   "first_name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20150410002628) do
     t.string   "organization"
     t.string   "password_digest"
     t.string   "type"
+    t.boolean  "active"
   end
 
 end

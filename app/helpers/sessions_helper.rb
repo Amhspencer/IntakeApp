@@ -43,4 +43,8 @@ module SessionsHelper
     return session[:user_role] == :staff
   end
 
+  def is_active?
+    return User.where(id: session[:user_id]).first.active
+  end
+
 end
