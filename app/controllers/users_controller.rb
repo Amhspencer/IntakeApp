@@ -75,7 +75,9 @@ class UsersController < ApplicationController
 #Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
 #appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
   def form_sorting_for_show
-    redirect_when_missing_params
+    if missing_params then
+      redirect_when_missing_params
+    end
     session[:unproc_sort] = params[:unproc_sort]
     session[:proc_sort] = params[:proc_sort]
     @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
@@ -83,13 +85,11 @@ class UsersController < ApplicationController
   end
 
   def redirect_when_missing_params
-    if missing_params then
       flash.keep
       redirect_to :action => "show",
                   :id => session[:user_id],
-                  :unproc_sort => (unprocessed ? session[:unproc_sort] : params[:unproc_sort]),
-                  :proc_sort => (processed ? session[:proc_sort] : params[:proc_sort])
-    end
+                  :unproc_sort => (params[:unproc_sort] ? params[:unproc_sort] : session[:unproc_sort]),
+                  :proc_sort => (params[:proc_sort] ? params[:proc_sort] : session[:proc_sort])
   end
 
   def missing_params
