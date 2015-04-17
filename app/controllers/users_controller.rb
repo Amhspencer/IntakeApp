@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def redirect_to_session_id
-    if params[:id] && params[:id].to_i != session[:user_id]
+    if params_and_session_inconsistent
       if session[:user_role] == :admin  
         redirect_to admin_path session[:user_id] and return
       elsif session[:user_role] == :partner
@@ -47,6 +47,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def params_and_session_inconsistent
+    return params[:id] && params[:id].to_i != session[:user_id]
+  end
   
 #Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
 #appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
