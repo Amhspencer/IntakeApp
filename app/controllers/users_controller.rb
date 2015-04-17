@@ -54,7 +54,17 @@ class UsersController < ApplicationController
 #Helper method for admin and partner show. There may be a better place for it, but I (Michael) this this is
 #appropriate.  Not sure exactly how the helper modules are intended to be used or how to use them properly.
   def form_sorting_for_show
-    unprocessed = (!params[:unproc_sort] && session[:unproc_sort])
+    sorting_redirect
+    session[:unproc_sort] = params[:unproc_sort]
+    session[:proc_sort] = params[:proc_sort]
+    @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
+    @processedForms = Form.where(:processed => true).order(session[:proc_sort])
+  end
+
+  #Dante, please help me (Michael) rename this method.  
+  #I don't have a clear understanding about what it's doing
+  def sorting_redirect 
+    unprocessed = (!params[:unproc_sort] && session[:unproc_sort]) #not params, but is a session
     processed = (!params[:proc_sort] && session[:proc_sort])
     if unprocessed || processed then
       flash.keep
@@ -63,10 +73,6 @@ class UsersController < ApplicationController
                   :unproc_sort => (unprocessed ? session[:unproc_sort] : params[:unproc_sort]),
                   :proc_sort => (processed ? session[:proc_sort] : params[:proc_sort])
     end
-    session[:unproc_sort] = params[:unproc_sort]
-    session[:proc_sort] = params[:proc_sort]
-    @unprocessedForms = Form.where(:processed => false).order(session[:unproc_sort])
-    @processedForms = Form.where(:processed => true).order(session[:proc_sort])
   end
 
 end
