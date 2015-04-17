@@ -31,14 +31,18 @@ class UsersController < ApplicationController
     if !session[:user_id]
       redirect_to login_path
     else
-      if params[:id]
-        if session[:user_role] == :admin  && params[:id].to_i != session[:user_id]
-          redirect_to admin_path session[:user_id] and return
-        elsif session[:user_role] == :partner && params[:id].to_i != session[:user_id]
-          redirect_to partner_path session[:user_id] and return
-        elsif session[:user_role] == :staff && params[:id].to_i != session[:user_id]
-          redirect_to staff_path session[:user_id] and return
-        end
+      redirect_to_session_id
+    end
+  end
+
+  def redirect_to_session_id
+    if params[:id] && params[:id].to_i != session[:user_id]
+      if session[:user_role] == :admin  
+        redirect_to admin_path session[:user_id] and return
+      elsif session[:user_role] == :partner
+        redirect_to partner_path session[:user_id] and return
+      elsif session[:user_role] == :staff
+        redirect_to staff_path session[:user_id] and return
       end
     end
   end
