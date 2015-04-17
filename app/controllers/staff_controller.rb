@@ -12,7 +12,7 @@ class StaffController < UsersController
     @staff = Staff.create!(params[:staff])
     if @staff.save
       flash[:success] = "Staff created successfully!"
-      redirect_to staff_path(session[:user_id])
+      redirect_to admin_path(session[:user_id])
     else
       render 'new'
     end

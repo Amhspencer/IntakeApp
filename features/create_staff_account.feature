@@ -18,11 +18,11 @@ Background:
     And I click the "Log in" button
     Then I should see myself as an "Admin"
 
-    When I click the "Create New Partner Account" button
-    And I fill in "admin_name" with "Will Smith"
-    And I fill in "admin_email" with "wsmith@yahoo.com"
-    And I fill in "admin_password" with "will123"
-    And I fill in "admin_phone_number" with "5145341234"
-    And I fill in "admin_work_email" with "wsmith@kaiser.com"
-    And I click the "Create new admin" button
-    Then I should see "Admin created successfully!"
+    When I click the "Create New Staff Account" button
+    And I fill in "staff_name" with "Will Smith"
+    And I fill in "staff_email" with "wsmith@yahoo.com"
+    And I fill in "staff_password" with "will123"
+    And I fill in "staff_phone_number" with "5145341234"
+    And I fill in "staff_work_email" with "wsmith@kaiser.com"
+    And I click the "Create new staff" button
+    Then I should see "Staff created successfully!"
