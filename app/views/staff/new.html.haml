@@ -1,10 +1,11 @@
--#views/staff/new.html.hahl
+-#This file is views/staff/new.html.hahl
+
 %div{:class => 'container master-container'}
   %h1 Create new staff account
   %div{:class => 'row'}
     %div{:class => 'col-md-9'}
 
-      = form_tag staff_path do
+      = form_tag staff_index_path do
 
         %div{:class => 'form_group'}
           = label :staff, :name, "Name", :class => 'control-label'
