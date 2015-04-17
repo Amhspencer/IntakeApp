@@ -41,7 +41,7 @@ class FormsController < ApplicationController
     @form = Form.find(params[:id])
     @form.processed = true
     @form.save!
-    redirect_to admin_path(session[:user_id])
+    redirect_to user_path(session[:user_id])
   end
 
 end
