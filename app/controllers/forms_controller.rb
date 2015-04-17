@@ -40,8 +40,7 @@ class FormsController < ApplicationController
 
   def processForm
     @form = Form.find(params[:id])
-    @form.processed = true
-    @form.save!
+    @form.process
     redirect_to user_path(session[:user_id])
   end
 
