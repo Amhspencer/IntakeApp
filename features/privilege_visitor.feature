@@ -36,3 +36,11 @@ Scenario: As a visitor, when I go to the staffs route i will be redirected to Lo
 Scenario: As a visitor, when I go to the users route i will be redirected to Login.
   When I go to the "/users" page
   Then I should see "Log in"
+
+Scenario: As a visitor, when I go to the disclaimer route i will be redirected to Login.
+  When I go to the "/static_pages/disclaimer" page
+  Then I should see "Log in"
+
+Scenario: As a visitor, when I go to the user's routes i will be redirected to Login.
+  When I go to the "/users/" page
+  Then I should see "Log in"
