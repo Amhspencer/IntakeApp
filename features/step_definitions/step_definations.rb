@@ -52,6 +52,10 @@ Then /I should see "(.*)"/ do |msg|
 	assert page.body =~ /#{msg}/
 end
 
+Then /I should not see "(.*)" anywhere/ do |msg|
+  assert !(page.body =~ /#{msg}/)
+end
+
 Then /I should first see "(.*)", then "(.*)"/ do |a, b|
   one = page.body.index(a)
   two = page.body.index(b)

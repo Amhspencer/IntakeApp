@@ -14,7 +14,7 @@
         %tbody
           - @unprocessedForms.each do |form|
             %tr
-              %td= link_to "#{form.last_name}, #{form.first_name[0]}", showToAdmin_form_path(form)
+              %td= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form)
               %td= form.created_at.strftime("%m/%d/%y")
               %td= form.medical_facility
               %td= form.service_area
