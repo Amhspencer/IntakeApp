@@ -7,9 +7,9 @@ Feature: Create New Staff Account
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
   Scenario:
     When I go to the "/login" page

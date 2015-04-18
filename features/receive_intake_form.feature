@@ -7,9 +7,9 @@ Feature: Receive intake form
 Background:
 
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
     Given the following forms exist:
 | first_name | middle_initial | last_name | date_of_birth | phone_number | preferred_language | cancer_care_provider | service_area | surgery | chemo | radiation | late_stage | income | additional_info | consent | signature | date       | medical_facility | processed |

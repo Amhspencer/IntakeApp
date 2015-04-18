@@ -6,12 +6,12 @@ Feature: Admin and Partner can be able to logout from dashboard.
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
 Scenario: As an admin, I can logout from admin's dashboard.
   When I go to the "/login" page

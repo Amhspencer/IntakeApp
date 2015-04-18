@@ -5,7 +5,7 @@ Given /the following admins exist/ do |admins_table|
 end
 
 Given /I am logged in as an admin/ do
-  Admin.create!(:email => "andy@andy.com", :name => "Andy", :password => "andy123")
+  Admin.create!(:email => "andy@andy.com", :name => "Andy", :password => "andy123", :active => true)
   visit("/login")
   fill_in "session_email", :with => "andy@andy.com"
   fill_in "session_password", :with =>"andy123"
@@ -41,6 +41,10 @@ end
 
 And /I click the "(.*)" button/ do |butn|
 	click_button butn
+end
+
+And /I click "(.*)" of the "(.*)" buttons/ do |where, butn1|
+  click_button butn1[where.to_i]
 end
 
 Then /I should see myself as an "(.*)"/ do |role|
@@ -98,4 +102,10 @@ And /there will be "(.*)" forms in "(.*)" table/ do |num1, form1|
   temp1 = 'table#' + form1 + ' tr'
   rows_in_table = page.all(temp1).size - 1
   assert(num1.to_i == rows_in_table, rows_in_table.to_s + " does not equal " + num1.to_s)
+end
+
+And /there will be "(.*)" users in "(.*)" table/ do |num2, form2|
+  temp2 = 'table#' + form2 + ' tr'
+  rows_in_table2 = page.all(temp2).size - 1
+  assert(num2.to_i == rows_in_table2, rows_in_table2.to_s + " does not equal " + num2.to_s)
 end
