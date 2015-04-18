@@ -24,7 +24,7 @@ describe User do
   end
 
   after :all do
-    @user.destroy
+    @user.destroy if @user != nil
   end
 
 end

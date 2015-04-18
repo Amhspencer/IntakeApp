@@ -10,7 +10,7 @@ Given /I am logged in as an admin/ do
   fill_in "session_email", :with => "andy@andy.com"
   fill_in "session_password", :with =>"andy123"
   click_button "Log in"
-  assert page.body =~ /Displaying Admin: Andy/
+  assert page.body =~ /Admin Dashboard/
 end
 
 Given /the following partners exist/ do |partners_table|
