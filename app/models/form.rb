@@ -7,7 +7,4 @@ class Form < ActiveRecord::Base
       self.save!
   end
 
-
-
-
 end

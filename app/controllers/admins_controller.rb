@@ -8,6 +8,7 @@ class AdminsController < UsersController
 
   def create
     @admin = Admin.create!(params[:admin])
+    @admin.reactivate
     @admin.save!
     if @admin.save
       flash[:success] = "Admin created successfully!"
@@ -19,10 +20,13 @@ class AdminsController < UsersController
 
   def deactivate
     if params[:deactivate] then
-      User.find(params[:deactivate]).deactivate
+      @user = User.find(params[:deactivate]).deactivate
     end
-    @active_users = User.find_by_active(true)
-    @inactive_users = User.find_by_active(false)
+    if params[:reactivate] then
+      @user = User.find(params[:reactivate]).reactivate
+    end
+    @active_users = User.find_all_by_active(true)
+    @inactive_users = User.find_all_by_active(false)
   end
 
 end

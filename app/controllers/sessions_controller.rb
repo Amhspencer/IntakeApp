@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.where(email: params[:session][:email].downcase).first
-    if @user && @user.authenticate(params[:session][:password])
+    if @user && @user.authenticate(params[:session][:password]) && @user.active
       log_in @user
       if is_partner_session?
         redirect_to partner_path @user.id
