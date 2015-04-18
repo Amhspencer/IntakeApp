@@ -34,22 +34,11 @@ class UsersController < ApplicationController
   def authenticate_user
     if !session[:user_id]
       redirect_to login_path
-    else
-      redirect_to_session_id
+    elsif params_and_session_inconsistent
+      redirect_to_user(session[:user_id])
     end
   end
 
-  def redirect_to_session_id
-    if params_and_session_inconsistent
-      if is_admin_session?
-        redirect_to admin_path session[:user_id] and return
-      elsif is_partner_session?
-        redirect_to partner_path session[:user_id] and return
-      elsif is_staff_session?
-        redirect_to staff_path session[:user_id] and return
-      end
-    end
-  end
 
   def params_and_session_inconsistent
     return params[:id] && params[:id].to_i != session[:user_id]

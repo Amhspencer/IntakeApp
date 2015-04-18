@@ -31,6 +31,17 @@ module SessionsHelper
   end
 
 
+  def redirect_to_user(id)
+    if is_admin_session?
+      redirect_to admin_path id and return
+    elsif is_partner_session?
+      redirect_to partner_path id and return
+    elsif is_staff_session?
+      redirect_to staff_path id and return
+    end
+  end
+
+
   def is_admin_session?
     return session[:user_role] == :admin
   end
