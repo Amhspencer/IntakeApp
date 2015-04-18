@@ -6,9 +6,12 @@ describe AdminsController do
     it 'should call the validation method to ensure I am an admin' do
       
     end
-    it 'should call the method for sorting forms'
-    it 'should select the admin dashboard for rendering'
-    it 'should make the sorted forms available to the dashboard'
+    it 'should call the method for sorting forms' do
+    end
+    it 'should select the admin dashboard for rendering' do
+    end
+    it 'should make the sorted forms available to the dashboard' do
+    end
   end
 
 end

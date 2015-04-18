@@ -7,6 +7,7 @@ describe User do
     @user.password = "secretpassword"
     @user.name = "Bobby"
     @user.active = true
+    @user.email = "valid@email.com"
   end
 
   it 'should successfully deactivate accounts' do
@@ -20,6 +21,10 @@ describe User do
   	expect(@user.active).to eq(false)
   	@user.reactivate
   	expect(@user.active).to eq(true)
+  end
+
+  after :all do
+    @user.destroy
   end
 
 end
