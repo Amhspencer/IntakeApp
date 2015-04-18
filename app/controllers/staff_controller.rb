@@ -3,7 +3,7 @@ class StaffController < UsersController
 
   def show
     form_sorting_for_show() 
-    @staff = Staff.find(params[:id])
+    @user = Staff.find(params[:id])
   end
 
 

@@ -2,23 +2,22 @@
 
 =render 'layouts/header'
 
-%h1{:class => 'text-center'} Displaying Admin: #{@admin.name}
+=render 'layouts/user_header'
 
-= render 'layouts/forms_table'
+%div{:class => 'container'}
+  %div{:class => 'btn-group', :role => "group"}
+    = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-default"
+    = button_to 'Create New Admin Account', new_admin_path, :method => :get, :class => "btn btn-default"
+    = button_to 'Create New Staff Account', new_staff_path, :method => :get, :class => "btn btn-primary"
+    = button_to 'Create New Partner Account', new_partner_path, :method => :get, :class => "btn btn-primary"
+    = button_to 'View all users', admins_deactivate_path, :method => :get, :class => "btn btn-primary"
 
-%p
-= button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
-%p
 
-= button_to 'Create New Admin Account', new_admin_path, :method => :get
-%p
 
-= button_to 'Create New Staff Account', new_staff_path, :method => :get
+=render 'layouts/forms_table'
 
-%p
-= button_to 'Create New Partner Account', new_partner_path, :method => :get
-%p
-= link_to 'View all users', admins_deactivate_path, :method => :get
+%div{:class => 'row'}
+
 
 
 
