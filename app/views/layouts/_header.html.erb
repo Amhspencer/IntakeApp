@@ -5,6 +5,7 @@
                         <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Breast Cancer Emergency Fund</a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
                         <ul class="nav pull-right">
+                            <li><a href="#">Hello <%= User.find(session[:user_id]).name%>,  </a></li>
                             <li><%= link_to "Log out", logout_path, method: :delete %></li>
                         </ul>
                     </div>

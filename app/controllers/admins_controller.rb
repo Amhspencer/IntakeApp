@@ -3,6 +3,7 @@ class AdminsController < UsersController
   def show
     form_sorting_for_show()
     @user = Admin.find(params[:id])
+    @stat = get_statistics()
   end
 
 

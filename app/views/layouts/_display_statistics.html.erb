@@ -1,0 +1,15 @@
+                            <div class="btn-controls">
+                                <div class="btn-box-row row-fluid">
+                                    <a href="#" class="btn-box big span4"><i class=" icon-user"></i><b><%= @stat[:total_active]%> / <%= @stat[:total_user]%></b>
+                                        <p class="text-muted">
+                                            Active / Inactive</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-group"></i><b><%= @stat[:total_admin]%> / <%= @stat[:total_staff]%> / <%= @stat[:total_partner]%></b>
+                                        <p class="text-muted">
+                                            Admins / Staff / Partners</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-copy"></i><b><%= @stat[:total_processed]%> / <%= @stat[:total_unprocessed]%> / <%= @stat[:total_form]%></b>
+                                        <p class="text-muted">
+                                            Processed / Unprocessed / Total</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--/#btn-controls-->
