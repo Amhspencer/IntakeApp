@@ -11,7 +11,7 @@ admins = [{:name => 'Savannah Dunlap', :email => 'savannah@gmail.com', :work_ema
 		{:name => 'BCEFTestEmail', :email => 'bceftestemail@gmail.com', :work_email => 'andy@bcef.org', :password => '123456', :phone_number => "1235673912", :active => true}
 		]
 
-staff = [{:name => 'Staff Person', :email => 'staff@staff.com', :work_email => 'staff@bcef.org', :password => '123456', :phone_number => "1235673912", :active => true},
+staff = [{:name => 'Staff Person', :email => 'staff@gmail.com', :work_email => 'staff@bcef.org', :password => '123456', :phone_number => "1235673912", :active => true},
         ]
 
 partners = [{:name => 'Katie Chen', :email => 'kchen@gmail.com', :work_email => 'katie@mountzion.org', :password => 'katieisgr8', :phone_number => "9871237654", :organization => 'Mount Zion Cancer Center', :active => true},
