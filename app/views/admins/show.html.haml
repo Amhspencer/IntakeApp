@@ -5,12 +5,13 @@
 =render 'layouts/user_header'
 
 %div{:class => 'container'}
-  %div{:class => 'btn-group', :role => "group"}
-    = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-default"
-    = button_to 'Create New Admin Account', new_admin_path, :method => :get, :class => "btn btn-default"
-    = button_to 'Create New Staff Account', new_staff_path, :method => :get, :class => "btn btn-primary"
-    = button_to 'Create New Partner Account', new_partner_path, :method => :get, :class => "btn btn-primary"
-    = button_to 'View all users', admins_deactivate_path, :method => :get, :class => "btn btn-primary"
+  = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-default"
+  %br
+  = button_to 'Create New Admin Account', new_admin_path, :method => :get, :class => "btn btn-default"
+  = button_to 'Create New Staff Account', new_staff_path, :method => :get, :class => "btn btn-default"
+  = button_to 'Create New Partner Account', new_partner_path, :method => :get, :class => "btn btn-default"
+  %br
+  = button_to 'View all users', admins_deactivate_path, :method => :get, :class => "btn btn-default"
 
 
 

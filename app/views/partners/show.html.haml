@@ -4,9 +4,8 @@
 
 =render 'layouts/user_header'
 
-  %p Avaliable functions:
-
-  = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-primary"
+%div{:class => 'container'}
+    = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-default"
 
 =render 'layouts/forms_table_partner'
 

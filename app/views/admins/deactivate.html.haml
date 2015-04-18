@@ -16,7 +16,7 @@
             -@active_users.each do |user|
               %tr
                 %td #{user.name}
-                %td=button_to 'Deactivate?', admins_deactivate_path(:deactivate => user.id), :method => :post
+                %td=button_to 'Deactivate?', admins_deactivate_path(:deactivate => user.id), :id => user.id, :method => :post
       %p
       %table#inactive_users
         %thead
@@ -28,5 +28,5 @@
             -@inactive_users.each do |user|
               %tr
                 %td #{user.name}
-                %td=button_to 'Reactivate?', admins_deactivate_path(:reactivate => user.id), :method => :post
+                %td=button_to 'Reactivate?', admins_deactivate_path(:reactivate => user.id), :id => user.id, :method => :post
 

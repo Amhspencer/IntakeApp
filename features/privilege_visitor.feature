@@ -7,16 +7,16 @@ Feature: Visitor - or unloggedin user - cannot be able to browse or execute any 
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
 
   Given the following partners exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
   Given the following partners exist:
-      | email           | name  | password      | phone_number | work_email         |
-      | candy@candy.com | Candy | candy123      | 5101233123   | cand@workplace.com |
+      | email           | name  | password      | phone_number | work_email         | active |
+      | candy@candy.com | Candy | candy123      | 5101233123   | cand@workplace.com | true   |
 
 Scenario: As a visitor, when I go to the admins route i will be redirected to Login.
   When I go to the "/login" page

@@ -4,11 +4,10 @@
 
 =render 'layouts/user_header'
 
-= render 'layouts/forms_table'
+%div{:class => 'container'}
+  = button_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn btn-default"
+  %br
 
-%br
-= button_to 'New Client Form', static_pages_disclaimer_path, :method => :get
-%br
-
+=render 'layouts/forms_table'
 
 =render 'layouts/footer'
