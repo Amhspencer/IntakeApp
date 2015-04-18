@@ -80,6 +80,10 @@ When /I click the "(.*)" link/ do |lk|
 	click_link lk
 end
 
+When /I click the button "(.*)" with id "(.*)"/ do |butn3,lk2|
+  click_button lk2
+end
+
 When /I click the link "(.*)" called "(.*)"/ do |id, txt|
   within("##{id}") do
     click_link txt
