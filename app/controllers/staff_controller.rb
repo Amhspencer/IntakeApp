@@ -10,6 +10,7 @@ class StaffController < UsersController
 
   def create
     @staff = Staff.create!(params[:staff])
+    @staff.reactivate
     if @staff.save
       flash[:success] = "Staff created successfully!"
       redirect_to admin_path(session[:user_id])

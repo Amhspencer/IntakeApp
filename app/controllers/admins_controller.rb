@@ -9,7 +9,6 @@ class AdminsController < UsersController
   def create
     @admin = Admin.create!(params[:admin])
     @admin.reactivate
-    @admin.save!
     if @admin.save
       flash[:success] = "Admin created successfully!"
       redirect_to admin_path(session[:user_id])
