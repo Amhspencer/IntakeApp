@@ -5,9 +5,9 @@ Feature:
 
   Background:
     Given the following partners exist:
-        | email           | name  | password      | phone_number | work_email         |
-        | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com |
-        | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com |
+        | email           | name  | password      | phone_number | work_email         | active |
+        | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
+        | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
     Given the following forms exist:
     | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed | user_id |
