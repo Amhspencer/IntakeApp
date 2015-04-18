@@ -59,6 +59,11 @@ module IntakeApp
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.compress = true
+    config.assets.compile = true
+    config.assets.digest = true
+    
     # this is required to deploy on heroku -- Peter
     config.assets.initialize_on_precompile = false
   end
