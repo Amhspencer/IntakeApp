@@ -1,7 +1,8 @@
 Feature: Admin can reactivate account
 	
   As an admin user at BCEF.
-  I can deactivate accounts that are no longer in use.
+  So that I can adapt as staff and partners change.
+  I can reactivate accounts so they can be used again.
 
 Background:
 
