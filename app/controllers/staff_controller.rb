@@ -2,8 +2,9 @@ class StaffController < UsersController
 
 
   def show
-    form_sorting_for_show() 
+    form_sorting_for_show()
     @user = Staff.find(params[:id])
+    @stat = get_statistics()
   end
 
 

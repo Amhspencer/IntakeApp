@@ -22,7 +22,8 @@
 
                             </ul>
                             <!--/.widget-nav-->
-                            
+
+                            <% if @user.type == "Admin" %>
                             <!-- admin only -->
                             <ul class="widget widget-menu unstyled">
 
@@ -42,7 +43,9 @@
                                     <i class="menu-icon icon-exchange"></i>Re/Deactivate Acccount
                                 <% end %></li>
                             </ul>
+                            <% end %>
                             <!--/.widget-nav-->
+
                         </div>
                         <!--/.sidebar-->
                     </div>

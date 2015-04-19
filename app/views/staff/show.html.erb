@@ -1,0 +1,38 @@
+
+<%= render :partial => "layouts/header" %>
+<%= render :partial => "layouts/sidebar_admin" %>
+
+
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content">
+
+                            <!-- main functions -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        <%= @user.name%> - Staff Dashboard</h3>
+                                </div>
+                                <div class="module-body">
+                                
+                                <%= link_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn  btn-warning" %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </div>
+
+                            <!-- data tables -->
+                            <%= render :partial => "layouts/unprocessed_forms" %>
+                            <%= render :partial => "layouts/processed_forms" %>
+
+                            
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.wrapper-->
+
+<%= render :partial => "layouts/footer" %>
