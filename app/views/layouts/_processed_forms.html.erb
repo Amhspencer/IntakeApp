@@ -1,7 +1,11 @@
                             <div class="module">
                                 <div class="module-head">
                                     <h3 id="processed_table">
-                                        Processed Forms</h3>
+                                        Processed Forms
+                                        <% if @user.type == "Partner" %>
+                                          <small>Your previously submitted intake forms</small>
+                                        <% end %>
+                                    </h3>
                                 </div>
                                 <div class="module-body">
                                     <table class="table table-striped" name="processed_forms">
@@ -17,7 +21,13 @@
                                       <tbody>
                                       <% @processedForms.each do |form| %>
                                         <tr>
-                                          <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
+                                          <td>
+                                              <% if @user.type == "Partner" %>
+                                                <%= "#{form.last_name}, #{form.first_name[0]}" %>
+                                              <% else %>
+                                                <%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %>
+                                              <% end %>
+                                          </td>
                                           <td><%= form.created_at.strftime("%m/%d/%y") %></td>
                                           <td><%= form.medical_facility %></td>
                                           <td><%= form.service_area %></td>

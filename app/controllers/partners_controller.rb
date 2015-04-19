@@ -13,17 +13,11 @@ class PartnersController < UsersController
   end
   
   def show
-    id = params[:id]
-    @user = Partner.find(id)
-
-    need_to_sort = params[:partner_sort] || session[:partner_sort]
-
-    if need_to_sort
-      @all_forms = @user.forms.order(params[:partner_sort])
-      session[:partner_sort] = params[:partner_sort]
-    else
-      @all_forms = @user.forms  
-    end
+    form_sorting_for_show()
+    @user = Partner.find(params[:id])
+    @unprocessedForms = @unprocessedForms.select{ |f| f.user_id == @user.id}
+    @processedForms = @processedForms.select{ |f| f.user_id == @user.id}
+    @stat = get_statistics()
   end
 
 end
