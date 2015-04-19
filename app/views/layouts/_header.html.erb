@@ -3,7 +3,8 @@
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                         <i class="icon-reorder shaded"></i></a>
-                        <a class="brand" href="#"><img src="http://bcef.org/wp-content/themes/BCEF/images/logo.png" style="height:30px; ">  &nbsp;&nbsp;&nbsp;Breast Cancer Emergency Fund</a>
+
+                        <a class="brand" href="<%= user_path(session[:user_id]) %>"><img src="http://bcef.org/wp-content/themes/BCEF/images/logo.png" style="height:30px; ">  &nbsp;&nbsp;&nbsp;Breast Cancer Emergency Fund</a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
                         <ul class="nav pull-right">
                             <li><a href="#">Hello <%= User.find(session[:user_id]).name%>,  </a></li>

@@ -4,7 +4,7 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="#"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="<%= user_path(session[:user_id]) %>"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
 
                                 <li><%= link_to static_pages_disclaimer_path, :method => :get do %>
