@@ -86,6 +86,9 @@ class UsersController < ApplicationController
     stat[:total_processed] = (Form.find_all_by_processed(true)).length
     stat[:total_unprocessed] = (Form.find_all_by_processed(false)).length
     stat[:total_form] = (Form.all).length
+    stat[:total_processed_user] = (@user.forms.select{ |f| f.processed == true }).length
+    stat[:total_unprocessed_user] = (@user.forms.select{ |f| f.processed == false }).length
+
     return stat
   end
 

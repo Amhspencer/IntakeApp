@@ -11,10 +11,10 @@
                                     <i class="menu-icon icon-pencil"></i>New Client Form
                                 <% end %></li>
 
-                                <li><a href="#processed_table"><i class="menu-icon icon-check"></i>Processed Forms <b class="label green pull-right"> <%= @stat[:total_processed]%></b> </a></li>
+                                <li><a href="#processed_table"><i class="menu-icon icon-check"></i>Processed Forms <b class="label green pull-right"> <%= @stat[:total_processed_user]%></b> </a></li>
 
                                 <li><a href="#unprocessed_table"><i class="menu-icon icon-calendar"></i>Unprocessed Forms <b class="label orange pull-right">
-                                    <%= @stat[:total_unprocessed]%></b> </a></li>
+                                    <%= @stat[:total_unprocessed_user]%></b> </a></li>
 
                                 <li><%= link_to logout_path, :method => :delete do %>
                                     <i class="menu-icon icon-signout"></i>Logout
