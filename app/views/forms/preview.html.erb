@@ -1,0 +1,6 @@
+<%= render :partial => "form" %>
+
+<%= button_to 'New Client Form', user_path(session[:user_id]), :method => :get, :class => "btn  btn-warning" %>  
+<% if @user.type != "Partner" %>
+	<%= button_to 'New Client Form', process_form_path(@form), :method => :get, :class => "btn  btn-warning" %>  	
+<% end %>

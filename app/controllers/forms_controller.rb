@@ -35,6 +35,7 @@ class FormsController < ApplicationController
   #Controller action for bring up page with the mark as processed button
   def showToProcess
     @form = Form.find(params[:id])
+    @user = User.find(params[:id])
   end
 
 

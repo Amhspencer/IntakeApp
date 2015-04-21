@@ -21,13 +21,7 @@
                                       <tbody>
                                       <% @unprocessedForms.each do |form| %>
                                         <tr>
-                                          <td>
-                                              <% if @user.type == "Partner" %>
-                                                <%= "#{form.last_name}, #{form.first_name[0]}" %>
-                                              <% else %>
-                                                <%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %>
-                                              <% end %>
-                                          </td>
+                                          <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
                                           <td><%= form.created_at.strftime("%m/%d/%y") %></td>
                                           <td><%= form.medical_facility %></td>
                                           <td><%= form.service_area %></td>
