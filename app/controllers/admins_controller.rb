@@ -3,7 +3,7 @@ class AdminsController < UsersController
   def show
     form_sorting_for_show()
     @user = Admin.find(params[:id])
-    @stat = get_statistics()
+    @stat = view_context.get_statistics    #view_context = ApplicationHelper or any Helper
   end
 
 

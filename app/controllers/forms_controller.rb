@@ -1,5 +1,7 @@
 class FormsController < ApplicationController
 
+  before_filter :get_info
+
   def show
     id = params[:id]
     @form = Form.find(id)
@@ -35,7 +37,11 @@ class FormsController < ApplicationController
   #Controller action for bring up page with the mark as processed button
   def showToProcess
     @form = Form.find(params[:id])
-    @user = User.find(params[:id])
+  end
+
+  def get_info
+    @user = User.find(session[:user_id])
+    @stat = view_context.get_statistics  #view_context = ApplicationHelper or any Helper
   end
 
 

@@ -17,7 +17,7 @@ class PartnersController < UsersController
     @user = Partner.find(params[:id])
     @unprocessedForms = @unprocessedForms.select{ |f| f.user_id == @user.id}
     @processedForms = @processedForms.select{ |f| f.user_id == @user.id}
-    @stat = get_statistics()
+    @stat = view_context.get_statistics()
   end
 
 end

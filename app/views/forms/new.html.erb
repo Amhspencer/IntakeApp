@@ -1,0 +1,168 @@
+
+<%= render :partial => "layouts/header" %>
+<%= render :partial => "layouts/sidebar" %>
+
+
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content">
+
+                            <!-- main functions -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>Create New Form</h3>
+                                </div>
+                                <div class="module-body">
+                                    <h4>This form is being prepared by: <%= @user.name %></h4> <br />
+                                    <%= form_tag forms_path, class: "form-horizontal row-fluid", method: :post do %>
+
+                                        <div class="control-group">
+                                            <%= label :form, :first_name, "First Name", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :first_name, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :middle_initial, "Middle Initial", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :middle_initial, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :last_name, "Last Name", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :last_name, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :date_of_birth, "Date of Birth", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :date_of_birth, :class => "form-control span8" %>
+                                                <span class="help-inline">Eg: mm/dd/yyyy</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :phone_number, "Phone Number", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :phone_number, :class => "form-control span8" %>
+                                                <span class="help-inline">Eg: 5101234567</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :preferred_language, "Preferred Language", :class => "control-label", :for => "basicinput" %>
+                                            <div class="controls">
+                                                <%= select :form, :preferred_language, ["English", "Spanish"], :class => "form-control span8"%>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :medical_facility, "Medical Facility", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :medical_facility, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :form, :cancer_care_provider, "Cancer Care Provider", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :form, :cancer_care_provider, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">BCEF Service Area</label>
+                                            <div class="controls">
+                                                <label class="radio">
+                                                    <%= radio_button :form, :service_area, "San Fransico County", :class => 'radio'%>
+                                                    San Francisco County
+                                                </label> 
+                                                <label class="radio">
+                                                    <%= radio_button :form, :service_area, "San Mateo County", :class => 'radio'%>
+                                                    San Mateo County
+                                                </label> 
+                                                <label class="radio">
+                                                    <%= radio_button :form, :service_area, "Santa Clara County", :class => 'radio'%>
+                                                    Santa Clara County
+                                                </label> 
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">Active Breast Cancer Treatment (check all that apply)</label>
+                                            <div class="controls">
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :surgery, :class => "checkbox"%>Surgery current/pending/within six months
+                                                </label>
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :chemo, :class => "checkbox"%>Chemo current/pending/within six months
+                                                </label>
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :radiation, :class => "checkbox"%>Radiation current/pending/within six months
+                                                </label>
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :late_stage, :class => "checkbox"%>Metastatic Breast Cancer/Stage IV
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">BCEF Individual Income Requirement of $2,000 or less per month</label>
+                                            <div class="controls">
+                                                <label class="radio">
+                                                    <%= radio_button :form, :income, "Yes", :class => 'radio'%>
+                                                    Yes
+                                                </label> 
+                                                <label class="radio">
+                                                    <%= radio_button :form, :income, "No", :class => 'radio'%>
+                                                    No
+                                                </label> 
+                                                <label class="radio">
+                                                    <%= radio_button :form, :income, "Unsure", :class => 'radio'%>
+                                                    Unsure
+                                                </label> 
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label"></label>
+                                            <div class="controls">
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :additional_info, :class => "checkbox"%>Important additional infomation. Please contact me before contacting this client.
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label"></label>
+                                            <div class="controls">
+                                                <label class="checkbox">
+                                                    <%= check_box :form, :consent, :class => "checkbox"%>My signature indicates that above cliet has given verbal or written consent for BCEF to contact her/him directly to complete BCEF's application for emergency financial assistance.
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <%= submit_tag "Submit Intake Form", :class => 'btn  btn-info' %>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                    <!-- end form -->
+                                </div>
+                            </div>                            
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.wrapper-->
+
+<%= render :partial => "layouts/footer" %>
