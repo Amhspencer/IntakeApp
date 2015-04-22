@@ -43,3 +43,9 @@ Feature: Partner viewing partner's previously submitted forms
 
     When I click the "Back To Dashboard" link
     Then I should see "Smith"
+
+  Scenario: I can view the details of a previously submitted form
+    When I create the form above
+    And I click on the "Smith" link
+    Then I should see the details of the form
+
