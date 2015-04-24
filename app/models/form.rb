@@ -8,4 +8,9 @@ class Form < ActiveRecord::Base
       self.save!
   end
 
+  # Send reset email
+  def send_email_confirmation(user)
+        UserMailer.email_confirmation(user, self).deliver
+  end
+
 end
