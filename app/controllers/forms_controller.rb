@@ -45,7 +45,7 @@ class FormsController < ApplicationController
 
   def processForm
     @form = Form.find(params[:id])
-    @form.process(@user.name, DateTime.current)
+    @form.process(@user.name)
     redirect_to user_path(session[:user_id])
   end
 

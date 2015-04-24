@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20150417224807) do
     t.string   "signature"
     t.datetime "date"
     t.integer  "user_id"
-    t.datetime "processed_date"
     t.string   "processed_by"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
