@@ -18,17 +18,18 @@ class AdminsController < UsersController
     end
   end
 
-  def deactivate
+  def manage_accounts
+    @user = Admin.find(session[:user_id])
+    @stat = view_context.get_statistics    #view_context = ApplicationHelper or any Helper
     if params[:deactivate] then
-      @user = User.find(params[:deactivate]).deactivate
+      User.find(params[:deactivate]).deactivate
     end
     if params[:reactivate] then
-      @user = User.find(params[:reactivate]).reactivate
+      User.find(params[:reactivate]).reactivate
     end
     @active_users = User.find_all_by_active(true)
     @inactive_users = User.find_all_by_active(false)
   end
-
 end
 
 
