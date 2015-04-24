@@ -5,7 +5,7 @@ class CreateForms < ActiveRecord::Migration
       t.string :middle_initial
       t.string :last_name
       t.datetime :date_of_birth
-      t.integer :phone_number
+      t.string :phone_number
       t.string :preferred_language
       t.string :cancer_care_provider
       t.string :service_area
