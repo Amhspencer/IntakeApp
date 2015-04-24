@@ -8,8 +8,6 @@ class FormsController < ApplicationController
     # Should render the default show route
   end
 
-
-
   def new    
   end
 
@@ -47,7 +45,7 @@ class FormsController < ApplicationController
 
   def processForm
     @form = Form.find(params[:id])
-    @form.process
+    @form.process(@user.name, DateTime.current)
     redirect_to user_path(session[:user_id])
   end
 

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20150417224807) do
     t.string   "middle_initial"
     t.string   "last_name"
     t.datetime "date_of_birth"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.string   "preferred_language"
     t.string   "cancer_care_provider"
     t.string   "service_area"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20150417224807) do
     t.string   "signature"
     t.datetime "date"
     t.integer  "user_id"
+    t.datetime "processed_date"
+    t.string   "processed_by"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "medical_facility"
@@ -43,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20150417224807) do
     t.string   "email"
     t.string   "work_email"
     t.string   "password"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "organization"

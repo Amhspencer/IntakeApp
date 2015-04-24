@@ -2,5 +2,5 @@
 
 <%= button_to 'Back To Dashboard', user_path(session[:user_id]), :method => :get, :class => "btn  btn-warning" %>  
 <% if @user.type != "Partner" %>
-	<%= button_to 'Mark as Processed', process_form_path(@form), :method => :get, :class => "btn  btn-info" %>  	
+<%= button_to 'Mark as Processed', process_form_path(@form), :method => :post, :class => "btn  btn-info" %>  	
 <% end %>

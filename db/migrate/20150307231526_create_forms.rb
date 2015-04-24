@@ -19,6 +19,7 @@ class CreateForms < ActiveRecord::Migration
       t.string :signature
       t.datetime :date
       t.integer :user_id
+      t.string :processed_by
 
       t.timestamps
     end
