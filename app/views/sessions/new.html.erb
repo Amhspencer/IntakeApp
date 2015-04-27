@@ -39,7 +39,7 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-    background:url(http://i.imgur.com/TIN2nDU.jpg)  no-repeat center fixed;
+    background:url()  no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -370,6 +370,7 @@ input[type="submit"]:hover{
         font-size: 16px;
         font-family: 'Open Sans', Arial, Helvetica, sans-serif;
         height: auto;
+        width: auto;
         padding: 10px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -386,7 +387,6 @@ input[type="submit"]:hover{
                         
                     </div>
                             <%= form_for(:session, url: login_path, :html => { :class => "signinform" }) do |f| %>
-
                               
                               <%= f.email_field :email, class: 'form-control', placeholder: 'Email Address' %><br />
 
