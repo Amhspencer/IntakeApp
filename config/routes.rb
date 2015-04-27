@@ -2,9 +2,9 @@ IntakeApp::Application.routes.draw do
 
   get "password_resets/new"
   get "password_resets/edit"
-  get "admins/deactivate"
-  post "admins/deactivate"
 
+  get "admins/manage_accounts"
+  post "admins/manage_accounts"
   # root - index of : bcef.herokuapp.com
   root to:  'sessions#new'
 

@@ -4,14 +4,14 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="<%= user_path(session[:user_id]) %>"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="<%= user_path(session[:user_id]) %>"><i class="menu-icon fa fa-dashboard"></i>Dashboard
                                 </a></li>
 
                                 <li><%= link_to static_pages_disclaimer_path, :method => :get do %>
-                                    <i class="menu-icon icon-pencil"></i>New Client Form
+                                    <i class="menu-icon fa fa-pencil"></i>New Client Form
                                 <% end %></li>
 
-                                <li><a href="#processed_table"><i class="menu-icon icon-check"></i>Processed Forms <b class="label green pull-right"> 
+                                <li><a href="<%= user_path(session[:user_id]) %>#processed_table"><i class="menu-icon fa fa-check"></i>Processed Forms <b class="label green pull-right"> 
                                 <% if @user.type == "Partner" %>
                                     <%= @stat[:total_processed_user]%>
                                 <% else %>
@@ -19,7 +19,7 @@
                                 <% end %>
                                 </b> </a></li>
 
-                                <li><a href="#unprocessed_table"><i class="menu-icon icon-calendar"></i>Unprocessed Forms <b class="label orange pull-right">
+                                <li><a href="<%= user_path(session[:user_id]) %>#unprocessed_table"><i class="menu-icon fa fa-calendar"></i>Unprocessed Forms <b class="label orange pull-right">
                                 <% if @user.type == "Partner" %>
                                     <%= @stat[:total_unprocessed_user]%>
                                 <% else %>
@@ -28,7 +28,7 @@
                                 </b> </a></li>
 
                                 <li><%= link_to logout_path, :method => :delete do %>
-                                    <i class="menu-icon icon-signout"></i>Logout
+                                    <i class="menu-icon fa fa-sign-out"></i>Logout
                                 <% end %></li>
 
                             </ul>
@@ -38,20 +38,8 @@
                             <!-- admin only -->
                             <ul class="widget widget-menu unstyled">
 
-                                <li><%= link_to new_partner_path, :method => :get do %>
-                                    <i class="menu-icon icon-user"></i>Create New Partner
-                                <% end %></li>
-
-                                <li><%= link_to new_staff_path, :method => :get do %>
-                                    <i class="menu-icon icon-user"></i>Create New Staff
-                                <% end %></li>
-
-                                <li><%= link_to new_admin_path, :method => :get do %>
-                                    <i class="menu-icon icon-user"></i>Create New Admin
-                                <% end %></li>
-
-                                <li><%= link_to admins_deactivate_path, :method => :get do %>
-                                    <i class="menu-icon icon-exchange"></i>Re/Deactivate Acccount
+                                <li><%= link_to admins_manage_accounts_path, :method => :get do %>
+                                    <i class="menu-icon fa fa-group"></i>Manage Accounts
                                 <% end %></li>
                             </ul>
                             <% end %>

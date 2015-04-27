@@ -1,0 +1,87 @@
+
+<%= render :partial => "layouts/header" %>
+<%= render :partial => "layouts/sidebar" %>
+
+
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content">
+
+                            <!-- main functions -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>Create New Staff Account</h3>
+                                </div>
+                                <div class="module-body">
+                                    <br />
+  
+                                    <!-- error messages -->
+                                    <% if @staff.errors.any? %>
+                                        <% @staff.errors.full_messages.each do |msg| %>
+                                        <div class="alert alert-error">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <strong>Error:</strong> <%= msg %>
+                                        </div>
+                                        <% end %>
+                                    <% end %>
+
+                                    <%= form_tag staff_index_path, class: "form-horizontal row-fluid", method: :post do %>
+
+                                        <div class="control-group">
+                                            <%= label :staff, :name, "Full Name", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :staff, :name, :class => "form-control span8" %>
+                                                <span class="help-inline">Eg: John Doe</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :staff, :email, "Email", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :staff, :email, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :staff, :password, "Password", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= password_field :staff, :password, :class => "form-control span8" %>
+                                                <span class="help-inline">At least 6 characters</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :staff, :work_email, "Work Email", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :staff, :work_email, :class => "form-control span8" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <%= label :staff, :phone_number, "Phone Number", :class => "control-label", :for => "basicinput"%>
+                                            <div class="controls">
+                                                <%= text_field :staff, :phone_number, :class => "form-control span8" %>
+                                                <span class="help-inline">Eg: 510xxxyyyy</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <%= submit_tag "Create new staff", :class => 'btn  btn-info' %>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                    <!-- end form -->
+                                </div>
+                            </div>                            
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.wrapper-->
+
+<%= render :partial => "layouts/footer" %>

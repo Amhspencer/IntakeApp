@@ -16,6 +16,8 @@
                                           <th id="proc_name"><%= link_to "Medical Facility", user_path(:id => params[:id], :proc_sort => "medical_facility") %></th>
                                           <th id="proc_name"><%= link_to "County", user_path(:id => params[:id], :proc_sort => "service_area") %></th>
                                           <th id="proc_name"><%= link_to "Preferred Language", user_path(:id => params[:id], :proc_sort => "preferred_language") %></th>
+                                          <th id="proc_name"><%= link_to "Processed Date", user_path(:id => params[:id], :proc_sort => "updated_at") %></th>
+                                          <th id="proc_name"><%= link_to "By", user_path(:id => params[:id], :proc_sort => "processed_by") %></th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -26,6 +28,8 @@
                                           <td><%= form.medical_facility %></td>
                                           <td><%= form.service_area %></td>
                                           <td><%= form.preferred_language %></td>
+                                          <td><%= form.updated_at.strftime("%m/%d/%y") %></td>
+                                          <td><%= form.processed_by %></td>
                                         </tr>
                                       <% end %>
 

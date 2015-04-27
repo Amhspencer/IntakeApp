@@ -1,0 +1,109 @@
+
+<%= render :partial => "layouts/header" %>
+<%= render :partial => "layouts/sidebar" %>
+
+
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content">
+
+                            <!-- main functions -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        <%= @user.name%> - Manage Accounts</h3>
+                                </div>
+                                <div class="module-body">
+                                
+                                <%= link_to 'New Client Form', static_pages_disclaimer_path, :method => :get, :class => "btn  btn-warning" %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <%= link_to 'Create New Admin', new_admin_path, :method => :get, :class => "btn  btn-primary" %>
+
+                                <%= link_to 'Create New Staff', new_staff_path, :method => :get, :class => "btn  btn-info" %>
+
+                                <%= link_to 'Create New Partner', new_partner_path, :method => :get, :class => "btn  btn-success" %>
+
+                                </div>
+                            </div>
+
+                            <!-- Active Accounts Table -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3 id="processed_table">
+                                        Active Accounts
+                                    </h3>
+                                </div>
+                                <div class="module-body">
+                                    <table class="table table-striped" name="active_users">
+                                      <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>email</th>
+                                          <th>Phone Number</th>
+                                          <th>Type</th>
+                                          <th>Deactivate?</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      <% @active_users.each do |user| %>
+                                        <tr>
+                                          <td><%= user.name %></td>
+                                          <td><%= user.email %></td>
+                                          <td><%= user.phone_number %></td>
+                                          <td><%= user.type %></td>
+                                          <td><%= button_to "Deactivated?", admins_manage_accounts_path(:deactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-danger" %></td>
+                                        </tr>
+                                      <% end %>
+
+                                      </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <!-- Inactive Accounts Table -->
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3 id="processed_table">
+                                        Inactive Accounts
+                                    </h3>
+                                </div>
+                                <div class="module-body">
+                                    <table class="table table-striped" name="inactive_users">
+                                      <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>email</th>
+                                          <th>Phone Number</th>
+                                          <th>Type</th>
+                                          <th>Reactivate?</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      <% @inactive_users.each do |user| %>
+                                        <tr>
+                                          <td><%= user.name %></td>
+                                          <td><%= user.email %></td>
+                                          <td><%= user.phone_number %></td>
+                                          <td><%= user.type %></td>
+                                          <td><%= button_to "Reactivated?", admins_manage_accounts_path(:reactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-info" %></td>
+                                        </tr>
+                                      <% end %>
+
+                                      </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.wrapper-->
+
+<%= render :partial => "layouts/footer" %>

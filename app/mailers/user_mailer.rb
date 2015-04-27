@@ -8,4 +8,10 @@ class UserMailer < ActionMailer::Base
     mail to: user.email, subject: "Password reset"
   end
 
+  def email_confirmation(user, form)
+  	# No idea why i can't pass the direct user (not working), but instead saving it into another object
+  	@tuser = user
+  	@tform = form
+    mail to: "changetoinfo@bceflater.org", subject: "New Intake Form"
+  end
 end

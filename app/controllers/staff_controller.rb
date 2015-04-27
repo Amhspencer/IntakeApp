@@ -7,16 +7,22 @@ class StaffController < UsersController
     @stat = view_context.get_statistics()
   end
 
-
+  def new
+    @user = Admin.find(session[:user_id])
+    @stat = view_context.get_statistics    
+    @staff = Admin.new
+  end
 
   def create
-    @staff = Staff.create!(params[:staff])
-    @staff.reactivate
+    @user = Admin.find(session[:user_id])
+    @stat = view_context.get_statistics    
+    @staff = Staff.new(params[:staff])
     if @staff.save
+      @staff.reactivate
       flash[:success] = "Staff created successfully!"
       redirect_to admin_path(session[:user_id])
-    #else
-    #  render 'new'
+    else
+      render 'new'
     end
   end
 
