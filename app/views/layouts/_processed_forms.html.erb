@@ -22,14 +22,14 @@
                                       </thead>
                                       <tbody>
                                       <% @processedForms.each do |form| %>
-                                        <tr>
+                                        <tr id="processed">
                                           <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
                                           <td><%= form.created_at.strftime("%m/%d/%y") %></td>
                                           <td><%= form.medical_facility %></td>
                                           <td><%= form.service_area %></td>
                                           <td><%= form.preferred_language %></td>
-                                          <td><%= form.updated_at.strftime("%m/%d/%y") %></td>
-                                          <td><%= form.processed_by %></td>
+                                          <td id="processed_date"><%= form.updated_at.strftime("%m/%d/%y") %></td>
+                                          <td id="processed_by"><%= form.processed_by %></td>
                                         </tr>
                                       <% end %>
 
