@@ -1,0 +1,28 @@
+<h1>Diplaying Form ID: <%= @form.id %></h1>
+<div style="padding: 10px; font-size: 16px; font-face: corrier-new;">
+
+<p><strong>First Name:</strong> <%= @form.first_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong>Middle Inital:</strong> <%=@form.middle_initial%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong>Last Name:</strong> <%= @form.last_name %></p>
+
+<p><strong>Date of Birth:</strong> <%= @form.date_of_birth %></p>
+<p><strong>Phone Number:</strong> <%= @form.phone_number%></p>
+<p><strong>Preferred Language:</strong> <%=@form.preferred_language%></p>
+
+<p><strong>Medical Facility:</strong> <%= @form.medical_facility %></p>
+<p><strong>Cancer Care Provider:</strong> <%= @form.cancer_care_provider%></p>
+<p><strong>BCEF Service Area:</strong> <%=@form.service_area%></p>
+
+<p><strong>Active Breast Cancer Treatment:</strong></p>
+<ul>
+      <li>Surgery: <%=@form.surgery%></li>
+      <li>Chemo: <%=@form.chemo%></li>
+      <li>Metastic Breast Cancer/Stage IV: <%=@form.late_stage%></li>
+</ul>
+
+<p><strong>BCEF Individual Income Requirement of $2,000 or less per month: </strong> <%=@form.income%></p>
+
+<p><strong>Important Additional Information. Please contact me before contacting this client: </strong> <%=@form.additional_info%></p>
+
+<p><strong>Form Processed: </strong> <%=@form.processed%></p>
+</div>
