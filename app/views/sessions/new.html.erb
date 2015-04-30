@@ -39,7 +39,11 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-    background:url(http://i73.photobucket.com/albums/i211/sreezon101/background4.png)  no-repeat center fixed;
+<<<<<<< HEAD
+    background:url()  no-repeat center fixed;
+=======
+    background:url(http://i73.photobucket.com/albums/i211/sreezon101/background2.png)  no-repeat center fixed;
+>>>>>>> 8597642e7cdc718a9b9a60e9cb743f3c0c9b1da6
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -370,7 +374,7 @@ input[type="submit"]:hover{
         font-size: 16px;
         font-family: 'Open Sans', Arial, Helvetica, sans-serif;
         height: auto;
-	width: auto;
+        width: auto;
         padding: 10px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -387,7 +391,6 @@ input[type="submit"]:hover{
                         
                     </div>
                             <%= form_for(:session, url: login_path, :html => { :class => "signinform" }) do |f| %>
-
                               
                               <%= f.email_field :email, class: 'form-control', placeholder: 'Email Address' %><br />
 

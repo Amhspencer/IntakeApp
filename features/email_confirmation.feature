@@ -1,7 +1,7 @@
-Feature: Confirmation page after form creation should actually confirm creation
-  As a client or user filling out a form
-  So that I know my form has been created successfully
-  I want the confirmation page to mean the creation is successful.
+Feature: When a new form is created, info@bcef.org should receive an email alert
+  As a member of BCEF
+  So that I am aware of a new form that needs processing
+  I want to receive an email alert
 
   Background:
     Given the following admins exist:
@@ -10,7 +10,7 @@ Feature: Confirmation page after form creation should actually confirm creation
     | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
 
     
-  Scenario: When a form is successfully created, the confirmation should appear
+  Scenario: After I complete the form, info@bcef should get an email alert
     When I go to the "/login" page
     And I fill in "session_email" with "andy@andy.com"
     And I fill in "session_password" with "andy123"

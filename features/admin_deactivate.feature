@@ -18,7 +18,7 @@ Scenario: I need to be an admin to deactivate account
   And I click the "Log in" button
   Then I should see myself as an "Admin"
 
-  When I click the "View all users" button
+  When I click the "View All Users" link
   Then there will be "2" users in "active_users" table
 
   When I click the button "Deactivated?" with id "1"

@@ -103,13 +103,15 @@ And /I check the checkbox "(.*)"/ do |checkbox|
 end
 
 And /there will be "(.*)" forms in "(.*)" table/ do |num1, form1|
-  temp1 = 'table#' + form1 + ' tr'
-  rows_in_table = page.all(temp1).size - 1
+  temp1 = 'table#' + form1 + ' tbody tr'
+  #rows_in_table = page.all(temp1).size - 1    : this test is for table without head
+  rows_in_table = page.all(temp1).size
   assert(num1.to_i == rows_in_table, rows_in_table.to_s + " does not equal " + num1.to_s)
 end
 
 And /there will be "(.*)" users in "(.*)" table/ do |num2, form2|
-  temp2 = 'table#' + form2 + ' tr'
-  rows_in_table2 = page.all(temp2).size - 1
+  temp2 = 'table#' + form2 + ' tbody tr'
+  #rows_in_table2 = page.all(temp2).size - 1  : this test is for table without head
+  rows_in_table2 = page.all(temp2).size
   assert(num2.to_i == rows_in_table2, rows_in_table2.to_s + " does not equal " + num2.to_s)
 end

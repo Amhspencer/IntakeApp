@@ -18,10 +18,10 @@ Scenario: After I login as an admin, I can create a new Client (Intake) Form
   And I click the "Log in" button
   Then I should see myself as an "Admin"
 
-  When I click the "New Client Form" button
+  When I click the "New Client Form" link
   Then I would be at "disclaimer" page
   When I click the "Continue" link
-  Then I would be at "BCEF Intake Form" page
+  Then I would be at "Create New Form" page
 
   And I fill in "form_first_name" with "Will"
   And I fill in "form_middle_initial" with "T"
