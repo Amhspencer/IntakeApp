@@ -51,7 +51,7 @@
                                           <td><%= user.email %></td>
                                           <td><%= user.phone_number %></td>
                                           <td><%= user.type %></td>
-                                          <td><%= button_to "Deactivated?", admins_manage_accounts_path(:deactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-danger" %></td>
+                                          <td><%= button_to "Deactivate", admins_manage_accounts_path(:deactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-danger" %></td>
                                         </tr>
                                       <% end %>
 
@@ -87,7 +87,7 @@
                                           <td><%= user.email %></td>
                                           <td><%= user.phone_number %></td>
                                           <td><%= user.type %></td>
-                                          <td><%= button_to "Reactivated?", admins_manage_accounts_path(:reactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-info" %></td>
+                                          <td><%= button_to "Reactivate", admins_manage_accounts_path(:reactivate => user.id), :id => user.id, :method => :post, :class => "btn btn-info" %></td>
                                         </tr>
                                       <% end %>
 
