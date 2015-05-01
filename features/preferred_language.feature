@@ -17,7 +17,7 @@ Feature: view from in different languages
   And I click the "Log in" button
   Then I should see "Partner"
 
-  When I click the "New Client Form" button
+  When I click the "New Client Form" link
   Then I would be at "disclaimer" page
   
   When I click the "English" button

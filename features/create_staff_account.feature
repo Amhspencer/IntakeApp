@@ -18,7 +18,7 @@ Background:
     And I click the "Log in" button
     Then I should see myself as an "Admin"
 
-    When I click the "Create New Staff Account" button
+    When I click the "Create New Staff" link
     And I fill in "staff_name" with "Will Smith"
     And I fill in "staff_email" with "wsmith@yahoo.com"
     And I fill in "staff_password" with "will123"

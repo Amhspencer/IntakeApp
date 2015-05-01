@@ -31,6 +31,13 @@ Given /the following forms exist/ do |forms_table|
   end
 end
 
+Given /the following forms with today date exist/ do |forms_table2|
+  forms_table2.hashes.each do |form22|
+    date = eval(form22["date"])
+    Form.create! form22
+  end
+end
+
 When /I go to the "(.*)" page/ do |link|
 	visit(link)
 end
@@ -103,13 +110,27 @@ And /I check the checkbox "(.*)"/ do |checkbox|
 end
 
 And /there will be "(.*)" forms in "(.*)" table/ do |num1, form1|
-  temp1 = 'table#' + form1 + ' tr'
-  rows_in_table = page.all(temp1).size - 1
+  temp1 = 'table#' + form1 + ' tbody tr'
+  #rows_in_table = page.all(temp1).size - 1    : this test is for table without head
+  rows_in_table = page.all(temp1).size
   assert(num1.to_i == rows_in_table, rows_in_table.to_s + " does not equal " + num1.to_s)
 end
 
 And /there will be "(.*)" users in "(.*)" table/ do |num2, form2|
-  temp2 = 'table#' + form2 + ' tr'
-  rows_in_table2 = page.all(temp2).size - 1
+  temp2 = 'table#' + form2 + ' tbody tr'
+  #rows_in_table2 = page.all(temp2).size - 1  : this test is for table without head
+  rows_in_table2 = page.all(temp2).size
   assert(num2.to_i == rows_in_table2, rows_in_table2.to_s + " does not equal " + num2.to_s)
+end
+
+And /there will be "(.*)" in column "(.*)"/ do |name3, column3|
+  within "#"+column3 do
+      page.should have_content name3
+  end
+end
+
+And /there will be today date in column "(.*)"/ do |column4|
+  within "#"+column4 do
+      page.should have_content Time.now.strftime("%m/%d/%y")
+  end
 end
