@@ -9,8 +9,9 @@ describe Form do
 
   it 'should process forms' do
     expect(@form.processed).to eq(false)
-    @form.process
+    @form.process("Partner")
     expect(@form.processed).to eq(true)
+    expect(@form.processed_by).to eq("Partner")
   end
 
 end
