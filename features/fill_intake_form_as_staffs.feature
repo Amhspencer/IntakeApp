@@ -7,9 +7,9 @@ Feature: Fill in Intake Form as a Staff
 Background:
 
 	Given the following staffs exist:
-    | email           | name  | password      | phone_number | work_email         | active |
-    | cody@cody.com   | Cody  | cody123       | 5103456543   | andy@workplace.com | true   |
-    | daddy@daddy.com | Daddy | daddy123      | 5106554345   | dady@workplace.com | true   |
+    | email           | name  | password      | phone_number | active |
+    | cody@cody.com   | Cody  | cody123       | 5103456543   | true   |
+    | daddy@daddy.com | Daddy | daddy123      | 5106554345   | true   |
 
 Scenario: After I login as a staff, I can create a new Client (Intake) Form
   When I go to the "/login" page

@@ -6,16 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admins = [{:name => 'Savannah Dunlap', :email => 'savannah@gmail.com', :work_email => 'savannah@bcef.org', :password => 'killCancer', :phone_number => "1235673912", :active => true},
-		{:name => 'Andy', :email => 'andy@andy.com', :work_email => 'andy@bcef.org', :password => 'andy123', :phone_number => "1235673912", :active => true},
-		{:name => 'BCEFTestEmail', :email => 'bceftestemail@gmail.com', :work_email => 'andy@bcef.org', :password => '123456', :phone_number => "1235673912", :active => true}
+admins = [{:name => 'Savannah Dunlap', :email => 'savannah@gmail.com', :password => 'noMoreCancer', :phone_number => "1235673912", :active => true},
+		{:name => 'Andy', :email => 'andy@andy.com', :password => 'andy123', :phone_number => "1235673912", :active => true},
+		{:name => 'BCEFTestEmail', :email => 'bceftestemail@gmail.com', :password => '123456', :phone_number => "1235673912", :active => true}
 		]
 
-staff = [{:name => 'Staff Person', :email => 'staff@gmail.com', :work_email => 'staff@bcef.org', :password => '123456', :phone_number => "1235673912", :active => true},
+staff = [{:name => 'Staff Person', :email => 'staff@gmail.com', :password => '123456', :phone_number => "1235673912", :active => true},
         ]
 
-partners = [{:name => 'Katie Chen', :email => 'kchen@gmail.com', :work_email => 'katie@mountzion.org', :password => 'katieisgr8', :phone_number => "12345678", :organization => 'Mount Zion Cancer Center', :active => true},
-			{:name => 'Bobby', :email => 'bobby@bobby.com', :work_email => 'bobby@mountzion.org', :password => 'bobby123', :phone_number => "12345678", :organization => 'Mount Zion Cancer Center', :active => true}]
+partners = [{:name => 'Katie Chen', :email => 'kchen@gmail.com', :password => 'katieisgr8', :phone_number => "12345678", :organization => 'Mount Zion Cancer Center', :active => true},
+			{:name => 'Bobby', :email => 'bobby@bobby.com', :password => 'bobby123', :phone_number => "12345678", :organization => 'Mount Zion Cancer Center', :active => true}]
 
 forms = [{:first_name => 'Samantha', :middle_initial => 'R', :last_name => 'Smith', :date_of_birth => '1980-11-08 02:09:15', :phone_number => 1324657980, :preferred_language => 'English', :cancer_care_provider => 'John O\' Reilly', :service_area => 'San Francisco County', :surgery => false, :chemo => false, :radiation => false, :late_stage => true, :income => 'Unsure', :additional_info => false, :consent => true, :signature => 'Katie Chen', :date => '2015-03-06 04:18:56', :processed => false}, 
         {:first_name => 'Carina', :middle_initial => 'J', :last_name => 'Fernandez', :date_of_birth => '1985-11-08 02:09:15', :phone_number => '5107806100', :preferred_language => 'Spanish', :cancer_care_provider => 'E. Cho', :service_area => 'Santa Clara County', :surgery => false, :chemo => false, :radiation => true, :late_stage => false, :income => 'Yes', :additional_info => false, :consent => true, :signature => 'Katie Chen', :date => '2015-03-01 08:19:29', :processed => false},

@@ -6,9 +6,9 @@ Feature: Inactive accounts cannot be able to login.
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | false  |
-      | baby@baby.com   | Baby  | baby123       | 5101212345   | baby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | false  |
+      | baby@baby.com   | Baby  | baby123       | 5101212345   | true   |
 
 Scenario: As an inactive user, i cannot be able to login.
   When I go to the "/login" page

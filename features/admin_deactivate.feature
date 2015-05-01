@@ -7,9 +7,9 @@ Background:
 
 	#Given that I am logged in as a BCEF admin
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
 Scenario: I need to be an admin to deactivate account
 	When I go to the "/login" page

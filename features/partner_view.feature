@@ -5,9 +5,9 @@ Feature: Partner viewing partner's previously submitted forms
 
   Background:
     Given the following partners exist:
-      | email           | name  | password      | phone_number | work_email         | organization | active |
-      | cody@cody.com   | Cody  | cody123       | 5103456543   | andy@workplace.com | Kaiser       | true   |
-      | daddy@daddy.com | Daddy | daddy123      | 5106554345   | dady@workplace.com | Alta Bates   | true   |
+      | email           | name  | password      | phone_number | organization | active |
+      | cody@cody.com   | Cody  | cody123       | 5103456543   | Kaiser       | true   |
+      | daddy@daddy.com | Daddy | daddy123      | 5106554345   | Alta Bates   | true   |
 
   Scenario: After I login as a partner, I can create a new Client (Intake) Form
     When I go to the "/login" page

@@ -5,12 +5,12 @@ Feature:
 
   Background:
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
 
   Given the following partners exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
     Given the following forms with today date exist:
       | first_name | middle_initial | last_name | date_of_birth | phone_number | preferred_language | cancer_care_provider | service_area | surgery | chemo | radiation | late_stage | income | additional_info | consent | signature | date                          | medical_facility | processed | user_id |

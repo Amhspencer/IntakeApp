@@ -7,9 +7,9 @@ Feature: Create New Admin Account
 Background:
 
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
 Scenario: I need to be an admin to create a new admin. As an admin, i can create new admins
   When I go to the "/login" page
@@ -23,6 +23,5 @@ Scenario: I need to be an admin to create a new admin. As an admin, i can create
   And I fill in "admin_email" with "wsmith@yahoo.com"
   And I fill in "admin_password" with "will123"
   And I fill in "admin_phone_number" with "5145341234"
-  And I fill in "admin_work_email" with "wsmith@kaiser.com"
   And I click the "Create new admin" button
   Then I should see "Admin created successfully!"

@@ -7,12 +7,12 @@ Feature: Admin can view admin's dashboard and partner's dashboard.
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
 
   Given the following partners exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
 Scenario: As an admin, i can view my dashboard.
   When I go to the "/login" page
