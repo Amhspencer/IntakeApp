@@ -1,40 +1,40 @@
                             <div class="module">
-                                <div class="module-head">
-                                    <h3 id="processed_table">
-                                        Processed Forms
-                                        <% if @user.type == "Partner" %>
-                                          <small>Your previously submitted intake forms</small>
-                                        <% end %>
-                                    </h3>
-                                </div>
-                                <div class="module-body">
-                                    <table class="table table-striped" name="processed_forms" id="processed_forms">
-                                      <thead>
-                                        <tr>
-                                          <th id="proc_name"><%= link_to "Name", user_path(:id => params[:id], :proc_sort => "last_name") %></th>
-                                          <th id="proc_date"><%= link_to "Date Submitted", user_path(:id => params[:id], :proc_sort => "date") %></th>
-                                          <th id="proc_facility"><%= link_to "Medical Facility", user_path(:id => params[:id], :proc_sort => "medical_facility") %></th>
-                                          <th id="proc_county"><%= link_to "County", user_path(:id => params[:id], :proc_sort => "service_area") %></th>
-                                          <th id="proc_language"><%= link_to "Preferred Language", user_path(:id => params[:id], :proc_sort => "preferred_language") %></th>
-                                          <th id="proc_proc_date"><%= link_to "Processed Date", user_path(:id => params[:id], :proc_sort => "updated_at") %></th>
-                                          <th id="proc_proc_by"><%= link_to "By", user_path(:id => params[:id], :proc_sort => "processed_by") %></th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      <% @processedForms.each do |form| %>
-                                        <tr id="processed">
-                                          <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
-                                          <td><%= form.created_at.strftime("%m/%d/%y") %></td>
-                                          <td><%= form.medical_facility %></td>
-                                          <td><%= form.service_area %></td>
-                                          <td><%= form.preferred_language %></td>
-                                          <td id="processed_date"><%= form.updated_at.strftime("%m/%d/%y") %></td>
-                                          <td id="processed_by"><%= form.processed_by %></td>
-                                        </tr>
-                                      <% end %>
-
-                                      </tbody>
-                                    </table>
-                                    
-                                </div>
-                            </div>
+                              <div class="module-head">
+                                <h3 id="processed_table">
+                                  Processed Forms
+                                    <% if @user.type == "Partner" %>
+                                      <small>Your previously submitted intake forms</small>
+                                    <% end %>
+                                </h3>
+                              </div>
+                              <div class="module-body table">
+                                <center>
+                                <table cellpadding="0" cellspacing="0" border="0"  width="99%" class="datatable-1 table table-bordered table-striped  display" id="processed_forms" name="processed_forms">
+                                  <thead>
+                                    <tr>
+                                      <th id="proc_name">Name</th>
+                                      <th id="proc_date">Date Submitted</th>
+                                      <th id="proc_facility">Medical Facility</th>
+                                      <th id="proc_county">County</th>
+                                      <th id="proc_language">Preferred Language</th>
+                                      <th id="proc_proc_date">Processed Date</th>
+                                      <th id="proc_proc_by">By</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% @processedForms.each do |form| %>
+                                      <tr id="processed">
+                                        <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
+                                        <td><%= form.created_at.strftime("%m/%d/%y") %></td>
+                                        <td><%= form.medical_facility %></td>
+                                        <td><%= form.service_area %></td>
+                                        <td><%= form.preferred_language %></td>
+                                        <td id="processed_date"><%= form.updated_at.strftime("%m/%d/%y") %></td>
+                                        <td id="processed_by"><%= form.processed_by %></td>
+                                      </tr>
+                                    <% end %>
+                                  </tbody>
+                                </table>
+                                </center>
+                              </div>
+                            </div><!--/.module-->                            
