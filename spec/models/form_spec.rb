@@ -4,6 +4,8 @@ describe Form do
 
   before :each do
     @form = Form.new
+    @form.consent = true
+    @form.phone_number = 1234567890
     @form.processed = false
   end
 
