@@ -11,6 +11,9 @@ class FormsController < ApplicationController
   def new    
   end
 
+  def new_spanish
+  end
+
   def create
     @form = Form.create!(params[:form])
     @form.processed = false
