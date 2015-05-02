@@ -13,17 +13,17 @@
 
                                 <li><a href="<%= user_path(session[:user_id]) %>#processed_table"><i class="menu-icon fa fa-check"></i>Processed Forms <b class="label green pull-right"> 
                                 <% if @user.type == "Partner" %>
-                                    <%= @stat[:total_processed_user]%>
+                                    <%= @stat[:forms][:total_processed_user]%>
                                 <% else %>
-                                    <%= @stat[:total_processed]%>
+                                    <%= @stat[:forms][:total_processed]%>
                                 <% end %>
                                 </b> </a></li>
 
                                 <li><a href="<%= user_path(session[:user_id]) %>#unprocessed_table"><i class="menu-icon fa fa-calendar"></i>Unprocessed Forms <b class="label orange pull-right">
                                 <% if @user.type == "Partner" %>
-                                    <%= @stat[:total_unprocessed_user]%>
+                                    <%= @stat[:forms][:total_unprocessed_user]%>
                                 <% else %>
-                                    <%= @stat[:total_unprocessed]%>
+                                    <%= @stat[:forms][:total_unprocessed]%>
                                 <% end %>
                                 </b> </a></li>
 

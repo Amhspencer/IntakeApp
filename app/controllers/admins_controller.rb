@@ -17,8 +17,6 @@ class AdminsController < UsersController
   end
 
   def create
-#@user = Admin.find(session[:user_id])
-#    @stat = view_context.get_statistics    
     @admin = Admin.new(params[:admin])
     if @admin.save
       @admin.reactivate

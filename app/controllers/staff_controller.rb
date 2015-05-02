@@ -1,6 +1,5 @@
 class StaffController < UsersController
 
-
   def show
     form_sorting_for_show()
     @user = Staff.find(params[:id])
@@ -14,8 +13,6 @@ class StaffController < UsersController
   end
 
   def create
-#@user = Admin.find(session[:user_id])
-#@stat = view_context.get_statistics    
     @staff = Staff.new(params[:staff])
     if @staff.save
       @staff.reactivate
@@ -25,7 +22,5 @@ class StaffController < UsersController
       render 'new'
     end
   end
-
-
 
 end
