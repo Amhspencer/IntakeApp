@@ -17,6 +17,7 @@ IntakeApp::Application.routes.draw do
   # Process Form Routes
   get  'forms/process/:id(.:format)' => 'forms#showToProcess', :as => :showToProcess_form
   post 'forms/process/:id(.:format)' => 'forms#processForm', :as => :process_form
+  get  'forms/new_spanish'
   
   # View Form as Admin
   get  'forms/user/:id(.:format)' => 'forms#showToUser', :as => :showToUser_form

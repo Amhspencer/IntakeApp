@@ -1,116 +1,103 @@
-%div{:class => 'container master-container'}
-  %h1 BCEF Formulario de Admisión
-  %div{:class => 'row'}
-    %div{:class => 'col-md-9'}
+=render :partial => "layouts/header"
+=render :partial => "layouts/sidebar"
 
-      = form_tag forms_path do
+%div{:class => 'span9'}
+  %div{:class => 'content'}
+    %div{:class => 'module'}
+      %div{:class => 'module-head'}
+        %h3 Crear Nuevo Formulario
+      %div{:class => 'module-body'}
+        %h4 Este formulario esta siendo preparado por: #{@user.name}
+        = form_tag forms_path do
 
-        %div{:class => 'form_group'}
-          = label :form, :first_name, "Nombre", :class => 'control-label'
-          = text_field :form, :first_name, :class => 'form-control'
-        %p
+          %div{:class => 'control-group'}
+            = label :form, :first_name, "Nombre", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :first_name, :class => 'form-control span8'
 
-        %div{:class => 'form_group'}
-          = label :form, :middle_initial, "Inicial Del Segundo Nombre", :class => 'control-label'
-          = text_field :form, :middle_initial, :class => 'form-control'
-        %p
+          %div{:class => 'control-group'}
+            = label :form, :middle_initial, "Inicial Del Segundo Nombre", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :middle_initial, :class => 'form-control span8'
 
-        %div{:class => 'form_group'}
-          = label :form, :last_name, "Apellido", :class => 'control-label'
-          = text_field :form, :last_name, :class => 'form-control'
-        %p
+          %div{:class => 'control-group'}
+            = label :form, :last_name, "Apellido", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :last_name, :class => 'form-control span8'
 
-        %div{:class => 'form_group'}
-          = label :form, :date_of_birth, "Fecha de Nacimiento", :class => 'control-label'
-          = text_field :form, :date_of_birth, :class => 'form-control'
-        %p
+          %div{:class => 'control-group'}
+            = label :form, :date_of_birth, "Fecha de Nacimiento", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :date_of_birth, :class => 'form-control span8'
 
-        %div{:class => 'form_group'}
-          = label :form, :phone_number, "Telefóno", :class => 'control-label'
-          = phone_field :form, :phone_number, :class => 'form-control'
-        %p
+          %div{:class => 'control-group'}
+            = label :form, :phone_number, "Telefóno", :class => 'control-label', :for => 'basicinput'
+            = phone_field :form, :phone_number, :class => 'form-control span8'
 
-        %div{:class => 'form_group'}
-          = label :form, :preferred_language, "Idioma que Prefiere", :class => 'control-label'
-          = select :form, :preferred_language, ["Español"], :class => 'form-control'
+          %div{:class => 'control-group'}
+            = label :form, :preferred_language, "Idioma que Prefiere", :class => 'control-label', :for => 'basicinput'
+            = select :form, :preferred_language, ["Español"], :class => 'form-control span8'
 
-        %p
-        %div{:class => 'form_group'}
-          = label :form, :medical_facility, "Hospital", :class => 'control-label'
-          = text_field :form, :medical_facility, :class => 'form-control'
+          %div{:class => 'control-group'}
+            = label :form, :medical_facility, "Hospital", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :medical_facility, :class => 'form-control span8'
 
-        %p
-        %div{:class => 'form_group'}
-          = label :form, :cancer_care_provider, "Proveedor de Cuidado Cáncer", :class => 'control-label'
-          = text_field :form, :cancer_care_provider, :class => 'form-control'
+          %div{:class => 'control-group'}
+            = label :form, :cancer_care_provider, "Proveedor de Cuidado Cáncer", :class => 'control-label', :for => 'basicinput'
+            = text_field :form, :cancer_care_provider, :class => 'form-control span8'
 
-        %p
-        %div{:class => 'form_group'}
-          = label_tag "BCEF Area De Servicio"
-          %div{:class => 'row'}
-            %div{:class => 'col-md-3'}
-              %div{:class => 'radio'}
-                %label
-                  = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
-                  Condado de San Francisco
-              %div{:class => 'radio'}
-                %label
-                  = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
-                  Condado de San Mateo
-              %div{:class => 'radio'}
-                %label
-                  = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
-                  Condado de Santa Clara
+          %div{:class => 'control-group'}
+            %label{:class => 'control-label'} BCEF Area de Servicio
+            %div{:class => 'controls'}
+              %label{:class => 'radio'}
+                = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
+                Condado de San Francisco
+            %div{:class => 'controls'}
+              %label{:class => 'radio'}
+                = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
+                Condado de San Mateo
+            %div{:class => 'controls'}
+              %label{:class => 'radio'}
+                = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
+                Condado de Santa Clara
 
-        %p
-        %div{:class => 'form_group'}
-          = label_tag "Tratamiento Actual para Cáncer del Seno (marque todo que aplica)"
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :surgery, :class => 'checkbox'
-              Cirugía actual/pendiente/dentro de los últimos seis meses
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :chemo, :class => 'checkbox'
-              Quimioterapia actual/pendiente/dentro de los últimos seis meses
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :radiation, :class => 'checkbox'
-              Radiación actual/pendiente/dentro de los últimos seis meses
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :late_stage, :class => 'checkbox'
-              Cáncer del seno metastásico/Etapa IV
+          %div{:class => 'control-group'}
+            %label{:class => 'control-label'} Tratamiento Actual para Cáncer del Seno (marque todo que aplica)
+            %div{:class => 'controls'}
+              %label{:class => 'checkbox'}
+                = check_box :form, :surgery, :class => 'checkbox'
+                Cirugía actual/pendiente/dentro de los últimos seis meses
+              %label{:class => 'checkbox'}
+                = check_box :form, :chemo, :class => 'checkbox'
+                Quimioterapia actual/pendiente/dentro de los últimos seis meses
+              %label{:class => 'checkbox'}
+                = check_box :form, :radiation, :class => 'checkbox'
+                Radiación actual/pendiente/dentro de los últimos seis meses
+              %label{:class => 'checkbox'}
+                = check_box :form, :late_stage, :class => 'checkbox'
+                Cáncer del seno metastásico/Etapa IV
 
-        %p
-        %div{:class => 'form_group'}
-          = label_tag "BCEF Requisito de Ingreso Individual de $2,000 por mes o menos"
-          %div{:class => 'radio'}
-            %label
-              = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
-              Sí
-          %div{:class => 'radio'}
-            %label
-              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
-              No                 Si no, por favor llame a BCEF para pedir excepción
-          %div{:class => 'radio'}
-            %label
-              = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
-              Inseguro           Pide que el personal de BCEF verifique ingreso
+          %div{:class => 'control-group'}
+            %label{:class => 'control-label'} BCEF Requisito de Ingreso Individual de $2,000 por mes o menos
+            %div{:class => 'controls'}
+              %label{:class => 'radio'}
+                = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
+                Sí
+              %label{:class => 'radio'}
+                = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+                No                 Si no, por favor llame a BCEF para pedir excepción
+              %label{:class => 'radio'}
+                = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
+                Inseguro           Pide que el personal de BCEF verifique ingreso
 
-        %p
-        %div{:class => 'form_group'}
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :additional_info
-              Hay mas información importante. Favor de llamarme antes de contactar el cliente.
+          %div{:class => 'control-group'}
+            %div{:class => 'controls'}
+              %label{:class => 'checkbox'}
+                = check_box :form, :additional_info
+                Hay mas información importante. Favor de llamarme antes de contactar el cliente.
 
-        %p
-        %div{:class => 'form_group'}
-          %div{:class => 'checkbox'}
-            %label
-              = check_box :form, :consent
-              Mi firma indica que el cliente arriba mencionado ha dado permiso verbal o escrito para que
-        %p
-        %div{:class => 'form_group'}
-          = submit_tag "Enviar el formulario de admisión", :class => 'button'
+          %div{:class => 'control-group'}
+            %div{:class => 'controls'}
+              %label{:class => 'checkbox'}
+                = check_box :form, :consent
+                Mi firma indica que el cliente arriba mencionado ha dado permiso verbal o escrito para que
+          %div{:class => 'control-group'}
+            %div{:class => 'controls'}
+              = submit_tag "Enviar el formulario de admisión", :class => 'btn  btn-info'
+
