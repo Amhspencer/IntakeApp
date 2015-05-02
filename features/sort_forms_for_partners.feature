@@ -10,11 +10,11 @@ Feature:
         | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
     Given the following forms exist:
-    | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed | user_id |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | 1       | 
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | 1       |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | 1       |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | 1       |
+    | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed | user_id | consent | phone_number |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | 1       | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | 1       | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | 1       | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | 1       | true | 1234567890 |
 
     When I go to the "/login" page
     And I fill in "session_email" with "andy@andy.com"

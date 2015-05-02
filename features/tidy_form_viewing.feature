@@ -5,48 +5,48 @@ Feature: Keep form viewing clean
 
   Background:
     Given the following forms exist:
-    | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         |
-    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
-    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         |
+    | first_name | last_name | medical_facility | preferred_language | service_area  |    date    | processed | consent | phone_number |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Alan       | Zee       | Zion             | English            | San Mateo     | 4/03/15    | t         | true | 1234567890 |
+    | Steven     | Bing      | Alta Bates       | Tagalog            | San Francisco | 4/02/15    | t         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | Dave       | Jones     | Kaiser           | Spanish            | Santa Clara   | 3/15/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
+    | John       | Doe       | Sutter Health    | Cantonese          | San Francisco | 4/10/15    | f         | true | 1234567890 |
     
 	And I am logged in as an admin
 
