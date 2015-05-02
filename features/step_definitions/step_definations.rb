@@ -143,7 +143,7 @@ end
 
 And /there will be today date in column "(.*)"/ do |column4|
   within "#"+column4 do
-      page.should have_content Time.now.strftime("%m/%d/%y")
+      page.should have_content Time.now.utc.strftime("%m/%d/%y")
   end
 end
 
