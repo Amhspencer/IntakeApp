@@ -15,6 +15,7 @@ class FormsController < ApplicationController
     @form = Form.create!(params[:form])
     @form.processed = false
     @form.user_id = session[:user_id]           # Make sure foreign key is being assigned so we can call @partner.forms
+    @form.user_name = session[:name]
     @form.save!
     @form.send_email_confirmation(@user)
     # Redirect to the end page, for now redirects to a show that form
