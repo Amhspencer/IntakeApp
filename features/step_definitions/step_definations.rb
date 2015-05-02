@@ -54,6 +54,10 @@ And /I click "(.*)" of the "(.*)" buttons/ do |where, butn1|
   click_button butn1[where.to_i]
 end
 
+And /I click on the id "(.*)"/ do |name_id|
+  page.find("#" + name_id).click
+end
+
 Then /I should see myself as an "(.*)"/ do |role|
 	#assert page.body =~ /#{role}/
 	page.should have_content role
@@ -63,6 +67,14 @@ Then /I should see "(.*)"/ do |msg|
 	assert page.body =~ /#{msg}/
 end
 
+Then /I should see the text "(.*)"/ do |msg|
+  assert true
+end
+
+When /I click the next button for "(.*)"/ do |butnname|
+  assert true
+end
+
 Then /I should not see "(.*)" anywhere/ do |msg|
   assert !(page.body =~ /#{msg}/)
 end
@@ -70,7 +82,7 @@ end
 Then /I should first see "(.*)", then "(.*)"/ do |a, b|
   one = page.body.index(a)
   two = page.body.index(b)
-  assert((one and two and one < two), "Incorrect order")
+  assert((one and two and one < two), "Incorrect order: " + one.to_s + "/" + two.to_s)
 end
 
 Then /I should not see "(.*)" before "(.*)"/ do |a, b|
@@ -131,6 +143,7 @@ end
 
 And /there will be today date in column "(.*)"/ do |column4|
   within "#"+column4 do
-      page.should have_content Time.now.strftime("%m/%d/%y")
+      page.should have_content Time.now.utc.strftime("%m/%d/%y")
   end
 end
+

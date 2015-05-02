@@ -23,14 +23,5 @@ Feature: view from in different languages
   When I click the "English" button
   Then I should see "Thank you for connecting with Breast Cancer Emergency Fund!"
 
-  When I click the "Spanish" button
-  Then I should see "Esto mantendrá la exención de responsabilidad"  
-
-  When I click the "Cantonese" button
-  Then I should see "這將舉辦免責聲明"  
-
-  When I click the "Russian" button
-  Then I should see "Это будет держать отказ"  
-
-  When I click the "Vietnamese" button
-  Then I should see "Điều này sẽ tổ chức khuyến cáo"  
+  When I click the "Español" button
+  Then I should see "Gracias por la conexión con Breast Cancer Energency Fund!"  

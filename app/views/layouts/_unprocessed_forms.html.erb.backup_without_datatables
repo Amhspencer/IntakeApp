@@ -1,0 +1,36 @@
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3 id="unprocessed_table">
+                                        Unprocessed Forms
+                                        <% if @user.type == "Partner" %>
+                                          <small>Your previously submitted intake forms</small>
+                                        <% end %>
+                                    </h3>
+                                </div>
+                                <div class="module-body">
+                                    <table class="table table-striped" name="unprocessed_forms" id="unprocessed_forms">
+                                      <thead>
+                                        <tr>
+                                          <th id="unproc_name"><%= link_to "Name", user_path(:id => params[:id], :unproc_sort => "last_name") %></th>
+                                          <th id="unproc_date"><%= link_to "Date Submitted", user_path(:id => params[:id], :unproc_sort => "date") %></th>
+                                          <th id="unproc_facility"><%= link_to "Medical Facility", user_path(:id => params[:id], :unproc_sort => "medical_facility") %></th>
+                                          <th id="unproc_county"><%= link_to "County", user_path(:id => params[:id], :unproc_sort => "service_area") %></th>
+                                          <th id="unproc_language"><%= link_to "Preferred Language", user_path(:id => params[:id], :unproc_sort => "preferred_language") %></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      <% @unprocessedForms.each do |form| %>
+                                        <tr>
+                                          <td><%= link_to "#{form.last_name}, #{form.first_name[0]}", showToProcess_form_path(form) %></td>
+                                          <td><%= form.created_at.strftime("%m/%d/%y") %></td>
+                                          <td><%= form.medical_facility %></td>
+                                          <td><%= form.service_area %></td>
+                                          <td><%= form.preferred_language %></td>
+                                        </tr>
+                                      <% end %>
+
+                                      </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
