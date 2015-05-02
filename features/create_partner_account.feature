@@ -8,9 +8,9 @@ Background:
 
 	#Given that I am logged in as a BCEF admin
 	Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
 Scenario: I need to be an admin to create new partner. As an admin, i can create new partners
 	When I go to the "/login" page
@@ -25,6 +25,5 @@ Scenario: I need to be an admin to create new partner. As an admin, i can create
   And I fill in "partner_password" with "will123"
   And I fill in "partner_organization" with "Kaiser"
   And I fill in "partner_phone_number" with "5145341234"
-  And I fill in "partner_work_email" with "wsmith@kaiser.com"
   And I click the "Create new partner" button
   Then I should see "Partner created successfully!"

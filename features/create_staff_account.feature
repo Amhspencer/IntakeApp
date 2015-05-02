@@ -7,9 +7,9 @@ Feature: Create New Staff Account
 Background:
 
   Given the following admins exist:
-      | email           | name  | password      | phone_number | work_email         | active |
-      | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
-      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+      | email           | name  | password      | phone_number | active |
+      | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
+      | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
   Scenario:
     When I go to the "/login" page
@@ -23,6 +23,5 @@ Background:
     And I fill in "staff_email" with "wsmith@yahoo.com"
     And I fill in "staff_password" with "will123"
     And I fill in "staff_phone_number" with "5145341234"
-    And I fill in "staff_work_email" with "wsmith@kaiser.com"
     And I click the "Create new staff" button
     Then I should see "Staff created successfully!"

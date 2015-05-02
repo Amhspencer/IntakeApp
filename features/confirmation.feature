@@ -5,9 +5,9 @@ Feature: Confirmation page after form creation should actually confirm creation
 
   Background:
     Given the following admins exist:
-    | email           | name  | password      | phone_number | work_email         | active |
-    | andy@andy.com   | Andy  | andy123       | 5101231234   | andy@workplace.com | true   |
-    | bobby@bobby.com | Bobby | bobby123      | 5101233211   | boby@workplace.com | true   |
+    | email           | name  | password      | phone_number | active |
+    | andy@andy.com   | Andy  | andy123       | 5101231234   | true   |
+    | bobby@bobby.com | Bobby | bobby123      | 5101233211   | true   |
 
     
   Scenario: When a form is successfully created, the confirmation should appear

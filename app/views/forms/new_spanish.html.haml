@@ -26,22 +26,22 @@
         %p
 
         %div{:class => 'form_group'}
-          = label :form, :phone_number, "Número Telefónico", :class => 'control-label'
+          = label :form, :phone_number, "Telefóno", :class => 'control-label'
           = phone_field :form, :phone_number, :class => 'form-control'
         %p
 
         %div{:class => 'form_group'}
-          = label :form, :preferred_language, "Idioma Preferido", :class => 'control-label'
+          = label :form, :preferred_language, "Idioma que Prefiere", :class => 'control-label'
           = select :form, :preferred_language, ["Español"], :class => 'form-control'
 
         %p
         %div{:class => 'form_group'}
-          = label :form, :medical_facility, "Información del Hospital", :class => 'control-label'
+          = label :form, :medical_facility, "Hospital", :class => 'control-label'
           = text_field :form, :medical_facility, :class => 'form-control'
 
         %p
         %div{:class => 'form_group'}
-          = label :form, :cancer_care_provider, "Proveedor de Cuidados del Cáncer", :class => 'control-label'
+          = label :form, :cancer_care_provider, "Proveedor de Cuidado Cáncer", :class => 'control-label'
           = text_field :form, :cancer_care_provider, :class => 'form-control'
 
         %p
@@ -52,39 +52,39 @@
               %div{:class => 'radio'}
                 %label
                   = radio_button :form, :service_area, "San Fransico County", :class => 'radio'
-                  San Francisco County
+                  Condado de San Francisco
               %div{:class => 'radio'}
                 %label
                   = radio_button :form, :service_area, "San Mateo County", :class => 'radio'
-                  San Mateo County
+                  Condado de San Mateo
               %div{:class => 'radio'}
                 %label
                   = radio_button :form, :service_area, "Santa Clara County", :class => 'radio'
-                  Santa Clara County
+                  Condado de Santa Clara
 
         %p
         %div{:class => 'form_group'}
-          = label_tag "Breast Activo Tratamiento del Cáncer (marque lo que corresponda)"
+          = label_tag "Tratamiento Actual para Cáncer del Seno (marque todo que aplica)"
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :surgery, :class => 'checkbox'
-              Cirugía actual/pendiente/plazo de seis meses
+              Cirugía actual/pendiente/dentro de los últimos seis meses
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :chemo, :class => 'checkbox'
-              Chemo actual/pendiente/plazo de seis meses
+              Quimioterapia actual/pendiente/dentro de los últimos seis meses
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :radiation, :class => 'checkbox'
-              Actual Radiación/pendiente/plazo de seis meses
+              Radiación actual/pendiente/dentro de los últimos seis meses
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :late_stage, :class => 'checkbox'
-              Cáncer de mama metastásico/Fase IV
+              Cáncer del seno metastásico/Etapa IV
 
         %p
         %div{:class => 'form_group'}
-          = label_tag "Requisito BCEF Ingreso Personal de $ 2,000 o menos por mes"
+          = label_tag "BCEF Requisito de Ingreso Individual de $2,000 por mes o menos"
           %div{:class => 'radio'}
             %label
               = radio_button :form, :income, "Yes", :style => 'vertical-align: middle'
@@ -92,26 +92,25 @@
           %div{:class => 'radio'}
             %label
               = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
-              No
+              No                 Si no, por favor llame a BCEF para pedir excepción
           %div{:class => 'radio'}
             %label
               = radio_button :form, :income,  "No", :style => 'vertical-aligh: middle'
-              Inseguro
+              Inseguro           Pide que el personal de BCEF verifique ingreso
 
         %p
         %div{:class => 'form_group'}
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :additional_info
-              Infomación adicional importante. Póngase en contacto conmigo antes de contactar con este cliente.
+              Hay mas información importante. Favor de llamarme antes de contactar el cliente.
 
         %p
         %div{:class => 'form_group'}
           %div{:class => 'checkbox'}
             %label
               = check_box :form, :consent
-              Mi firma indica que por encima cliet ha dado verbal o consentimiento para BCEF comunicarse con su escrito / él directamente para completar la solicitud de BCEF para la asistencia financiera de emergencia .
-
+              Mi firma indica que el cliente arriba mencionado ha dado permiso verbal o escrito para que
         %p
         %div{:class => 'form_group'}
           = submit_tag "Enviar el formulario de admisión", :class => 'button'
