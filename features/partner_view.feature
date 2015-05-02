@@ -38,8 +38,8 @@ Feature: Partner viewing partner's previously submitted forms
     Then I should see "Diplaying Form ID"
     
     When I click the "Continue" link
-    Then I should see "confirmation"
-    And I should see "You will recieve an email confirming your form submission and your form will be processed within 24 hours"
+    Then I should see "Confirmation"
+    And I should see "BCEF has been notified of a new submission and your form will be processed within one business day"
 
     When I click the "Back To Dashboard" link
     Then I should see "Smith"
@@ -73,8 +73,8 @@ Feature: Partner viewing partner's previously submitted forms
     Then I should see "Diplaying Form ID"
     
     When I click the "Continue" link
-    Then I should see "confirmation"
-    And I should see "You will recieve an email confirming your form submission and your form will be processed within 24 hours"
+    Then I should see "Confirmation"
+    And I should see "BCEF has been notified of a new submission and your form will be processed within one business day"
 
     When I click the "Back To Dashboard" link
     Then I should see "Smith"
