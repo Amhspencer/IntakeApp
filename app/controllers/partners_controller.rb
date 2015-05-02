@@ -10,8 +10,8 @@ class PartnersController < UsersController
 
   def create
     #authenticate_user
-    @user = Admin.find(session[:user_id])
-    @stat = view_context.get_statistics    
+#@user = Admin.find(session[:user_id])
+#@stat = view_context.get_statistics    
     @partner = Partner.new(params[:partner])
     if @partner.save
       @partner.reactivate

@@ -14,8 +14,8 @@ class StaffController < UsersController
   end
 
   def create
-    @user = Admin.find(session[:user_id])
-    @stat = view_context.get_statistics    
+#@user = Admin.find(session[:user_id])
+#@stat = view_context.get_statistics    
     @staff = Staff.new(params[:staff])
     if @staff.save
       @staff.reactivate
